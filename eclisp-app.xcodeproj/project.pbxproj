@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		C6C300F01B92FD19007A7E3C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C6C300EF1B92FD19007A7E3C /* main.m */; };
 		C6C300F31B92FD19007A7E3C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C6C300F21B92FD19007A7E3C /* AppDelegate.m */; };
-		C6C300F61B92FD19007A7E3C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6C300F51B92FD19007A7E3C /* ViewController.m */; };
-		C6C300F91B92FD19007A7E3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6C300F71B92FD19007A7E3C /* Main.storyboard */; };
 		C6C300FB1B92FD19007A7E3C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6C300FA1B92FD19007A7E3C /* Images.xcassets */; };
 		C6C300FE1B92FD19007A7E3C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6C300FC1B92FD19007A7E3C /* LaunchScreen.xib */; };
 		C6C3010A1B92FD19007A7E3C /* eclisp_appTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C6C301091B92FD19007A7E3C /* eclisp_appTests.m */; };
+		C6C301211B938FFA007A7E3C /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6C3011F1B938FFA007A7E3C /* MainViewController.m */; };
+		C6C301221B938FFA007A7E3C /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6C301201B938FFA007A7E3C /* MainViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +32,14 @@
 		C6C300EF1B92FD19007A7E3C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C6C300F11B92FD19007A7E3C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C6C300F21B92FD19007A7E3C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		C6C300F41B92FD19007A7E3C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		C6C300F51B92FD19007A7E3C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		C6C300F81B92FD19007A7E3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C6C300FA1B92FD19007A7E3C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C6C300FD1B92FD19007A7E3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		C6C301031B92FD19007A7E3C /* eclisp-appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "eclisp-appTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6C301081B92FD19007A7E3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C6C301091B92FD19007A7E3C /* eclisp_appTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = eclisp_appTests.m; sourceTree = "<group>"; };
+		C6C3011E1B938FFA007A7E3C /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		C6C3011F1B938FFA007A7E3C /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		C6C301201B938FFA007A7E3C /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,12 +83,12 @@
 			children = (
 				C6C300F11B92FD19007A7E3C /* AppDelegate.h */,
 				C6C300F21B92FD19007A7E3C /* AppDelegate.m */,
-				C6C300F41B92FD19007A7E3C /* ViewController.h */,
-				C6C300F51B92FD19007A7E3C /* ViewController.m */,
-				C6C300F71B92FD19007A7E3C /* Main.storyboard */,
 				C6C300FA1B92FD19007A7E3C /* Images.xcassets */,
 				C6C300FC1B92FD19007A7E3C /* LaunchScreen.xib */,
 				C6C300ED1B92FD19007A7E3C /* Supporting Files */,
+				C6C3011E1B938FFA007A7E3C /* MainViewController.h */,
+				C6C3011F1B938FFA007A7E3C /* MainViewController.m */,
+				C6C301201B938FFA007A7E3C /* MainViewController.xib */,
 			);
 			path = "eclisp-app";
 			sourceTree = "<group>";
@@ -199,8 +199,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C6C300F91B92FD19007A7E3C /* Main.storyboard in Resources */,
 				C6C300FE1B92FD19007A7E3C /* LaunchScreen.xib in Resources */,
+				C6C301221B938FFA007A7E3C /* MainViewController.xib in Resources */,
 				C6C300FB1B92FD19007A7E3C /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -219,8 +219,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C6C300F61B92FD19007A7E3C /* ViewController.m in Sources */,
 				C6C300F31B92FD19007A7E3C /* AppDelegate.m in Sources */,
+				C6C301211B938FFA007A7E3C /* MainViewController.m in Sources */,
 				C6C300F01B92FD19007A7E3C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -244,14 +244,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		C6C300F71B92FD19007A7E3C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C6C300F81B92FD19007A7E3C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		C6C300FC1B92FD19007A7E3C /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (

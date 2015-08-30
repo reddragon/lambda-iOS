@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:../eclisp-app/menu.png">
+   </FileRef>
+   <FileRef
       location = "self:eclisp-app.xcodeproj">
    </FileRef>
 </Workspace>

@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  MainViewController.h
 //  eclisp-app
 //
 //  Created by Gaurav Menghani on 8/30/15.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface MainViewController : UIViewController
 
 @end
-
