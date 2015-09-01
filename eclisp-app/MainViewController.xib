@@ -43,11 +43,11 @@
                         <constraint firstAttribute="height" constant="50" id="WyZ-T9-1GE"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DWc-4B-JaA">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DWc-4B-JaA">
                     <rect key="frame" x="8" y="55" width="304" height="363"/>
                     <color key="backgroundColor" red="0.72846748579960385" green="0.6268498373806054" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FD9-aQ-NmH">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FD9-aQ-NmH">
                     <rect key="frame" x="8" y="428" width="304" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
@@ -56,7 +56,7 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="euy-sW-kg0" secondAttribute="trailing" id="8gQ-ze-b8f"/>
-                <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="DWc-4B-JaA" secondAttribute="bottom" constant="150" id="BlZ-Pp-XJz"/>
+                <constraint firstAttribute="bottom" secondItem="DWc-4B-JaA" secondAttribute="bottom" constant="150" id="BlZ-Pp-XJz"/>
                 <constraint firstItem="FD9-aQ-NmH" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="ScT-cg-LiY"/>
                 <constraint firstItem="FD9-aQ-NmH" firstAttribute="top" secondItem="DWc-4B-JaA" secondAttribute="bottom" constant="10" id="Wi3-KL-HjA"/>
                 <constraint firstAttribute="trailing" secondItem="DWc-4B-JaA" secondAttribute="trailing" constant="8" id="cfx-PQ-Zkz"/>
