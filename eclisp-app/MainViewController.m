@@ -9,6 +9,8 @@
 #import "MainViewController.h"
 
 @interface MainViewController ()
+@property (strong, nonatomic) IBOutlet UIView *contentScreen;
+@property (strong, nonatomic) IBOutlet UITextField *inputField;
 
 @end
 
@@ -17,6 +19,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.navigationController setNavigationBarHidden:YES animated:NO];
+    self.contentScreen.layer.cornerRadius = 5;
+    self.contentScreen.layer.masksToBounds = YES;
+    
     // Do any additional setup after loading the view from its nib.
 }
 

@@ -6,6 +6,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController">
             <connections>
+                <outlet property="contentScreen" destination="DWc-4B-JaA" id="KAt-D1-3FT"/>
+                <outlet property="inputField" destination="FD9-aQ-NmH" id="rPu-JT-2h7"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -44,11 +46,12 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DWc-4B-JaA">
-                    <rect key="frame" x="8" y="55" width="304" height="363"/>
-                    <color key="backgroundColor" red="0.72846748579960385" green="0.6268498373806054" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <rect key="frame" x="8" y="55" width="304" height="463"/>
+                    <color key="backgroundColor" red="0.9946236559139785" green="0.989247311827957" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FD9-aQ-NmH">
-                    <rect key="frame" x="8" y="428" width="304" height="30"/>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type Expression" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FD9-aQ-NmH">
+                    <rect key="frame" x="8" y="528" width="304" height="30"/>
+                    <color key="backgroundColor" red="0.97194784680000001" green="0.96524969599999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
@@ -56,9 +59,9 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="euy-sW-kg0" secondAttribute="trailing" id="8gQ-ze-b8f"/>
-                <constraint firstAttribute="bottom" secondItem="DWc-4B-JaA" secondAttribute="bottom" constant="150" id="BlZ-Pp-XJz"/>
                 <constraint firstItem="FD9-aQ-NmH" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="ScT-cg-LiY"/>
                 <constraint firstItem="FD9-aQ-NmH" firstAttribute="top" secondItem="DWc-4B-JaA" secondAttribute="bottom" constant="10" id="Wi3-KL-HjA"/>
+                <constraint firstAttribute="bottom" secondItem="FD9-aQ-NmH" secondAttribute="bottom" constant="10" id="Y0L-vG-nbM"/>
                 <constraint firstAttribute="trailing" secondItem="DWc-4B-JaA" secondAttribute="trailing" constant="8" id="cfx-PQ-Zkz"/>
                 <constraint firstItem="DWc-4B-JaA" firstAttribute="top" secondItem="euy-sW-kg0" secondAttribute="bottom" constant="5" id="e6b-93-t05"/>
                 <constraint firstAttribute="trailing" secondItem="FD9-aQ-NmH" secondAttribute="trailing" constant="8" id="fJ7-ym-7rz"/>
