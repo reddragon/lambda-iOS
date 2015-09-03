@@ -11,16 +11,44 @@
 @interface MainViewController ()
 @property (strong, nonatomic) IBOutlet UIView *contentScreen;
 @property (strong, nonatomic) IBOutlet UITextField *inputField;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *bottomPaddingConstraint;
 
 @end
 
 @implementation MainViewController
+
+- (void)viewWillAppear:(BOOL)animated {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
+}
+
+- (void)keyboardWillShow:(NSNotification*) notification {
+    NSLog(@"KeyboardWillShow");
+    CGRect rect = [notification.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    NSLog(@"Constant %f", self.bottomPaddingConstraint.constant);
+    NSLog(@"Origin %f, %f, %f %f", rect.origin.x, rect.origin.y, rect.size.width, rect.size.height);
+    self.bottomPaddingConstraint.constant += CGRectGetMaxY(self.view.bounds) - CGRectGetMinY(rect);
+
+}
+
+- (void)keyboardWillHide:(NSNotification*) notification {
+    NSLog(@"KeyboardWillHide");
+}
+
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.navigationController setNavigationBarHidden:YES animated:NO];
     self.contentScreen.layer.cornerRadius = 5;
     self.contentScreen.layer.masksToBounds = YES;
+    
     
     // Do any additional setup after loading the view from its nib.
 }

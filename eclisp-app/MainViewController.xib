@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController">
             <connections>
+                <outlet property="bottomPaddingConstraint" destination="Y0L-vG-nbM" id="zyt-tQ-WA0"/>
                 <outlet property="contentScreen" destination="DWc-4B-JaA" id="KAt-D1-3FT"/>
                 <outlet property="inputField" destination="FD9-aQ-NmH" id="rPu-JT-2h7"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -49,11 +50,11 @@
                     <rect key="frame" x="8" y="55" width="304" height="463"/>
                     <color key="backgroundColor" red="0.9946236559139785" green="0.989247311827957" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type Expression" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FD9-aQ-NmH">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="type expression" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FD9-aQ-NmH">
                     <rect key="frame" x="8" y="528" width="304" height="30"/>
                     <color key="backgroundColor" red="0.97194784680000001" green="0.96524969599999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                 </textField>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
