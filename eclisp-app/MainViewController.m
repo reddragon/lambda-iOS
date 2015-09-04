@@ -41,14 +41,12 @@
 }
 
 
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.navigationController setNavigationBarHidden:YES animated:NO];
     self.contentScreen.layer.cornerRadius = 5;
     self.contentScreen.layer.masksToBounds = YES;
-    
+    self.inputField.clearButtonMode = UITextFieldViewModeWhileEditing;
     
     // Do any additional setup after loading the view from its nib.
 }
