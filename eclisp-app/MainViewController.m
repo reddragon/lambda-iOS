@@ -9,9 +9,10 @@
 #import "MainViewController.h"
 
 @interface MainViewController ()
-@property (strong, nonatomic) IBOutlet UIView *contentScreen;
+@property (strong, nonatomic) IBOutlet UITextView *contentScreen;
 @property (strong, nonatomic) IBOutlet UITextField *inputField;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *bottomPaddingConstraint;
+@property CGFloat initialPaddingConstant;
 
 @end
 
@@ -29,15 +30,21 @@
 
 - (void)keyboardWillShow:(NSNotification*) notification {
     NSLog(@"KeyboardWillShow");
-    CGRect rect = [notification.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
-    NSLog(@"Constant %f", self.bottomPaddingConstraint.constant);
-    NSLog(@"Origin %f, %f, %f %f", rect.origin.x, rect.origin.y, rect.size.width, rect.size.height);
-    self.bottomPaddingConstraint.constant += CGRectGetMaxY(self.view.bounds) - CGRectGetMinY(rect);
-
+    [self adjustViewForKeyboard:notification];
 }
 
 - (void)keyboardWillHide:(NSNotification*) notification {
     NSLog(@"KeyboardWillHide");
+    [self adjustViewForKeyboard:notification];
+}
+
+- (void)adjustViewForKeyboard:(NSNotification*) notification {
+    NSDictionary* userInfo = [notification userInfo];
+    CGRect rect = [userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    self.bottomPaddingConstraint.constant = CGRectGetMaxY(self.view.bounds) - CGRectGetMinY(rect) + self.initialPaddingConstant;
+
+    // double duration = [userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    
 }
 
 
@@ -47,8 +54,33 @@
     self.contentScreen.layer.cornerRadius = 5;
     self.contentScreen.layer.masksToBounds = YES;
     self.inputField.clearButtonMode = UITextFieldViewModeWhileEditing;
+    self.initialPaddingConstant = self.bottomPaddingConstraint.constant;
     
+    self.inputField.delegate = self;
+    [self.view addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self.view action:@selector(endEditing:)]];
     // Do any additional setup after loading the view from its nib.
+    self.contentScreen.editable = NO;
+    self.contentScreen.text = @"> ";
+}
+
+/*
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    NSLog(@"Field ended editing");
+    if (textField == self.inputField) {
+        NSLog(@"It was inputField");
+        [self.view endEditing:YES];
+    }
+}
+*/
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    NSLog(@"Input: %@", self.inputField.text);
+    // TODO Replace the result with the string evaluation result
+    NSString *result = @"1";
+    self.contentScreen.text =
+        [NSString stringWithFormat:@"%@%@\n%@\n\n> ", self.contentScreen.text, self.inputField.text, result];
+    self.inputField.text = @"";
+    return YES;
 }
 
 - (void)didReceiveMemoryWarning {
