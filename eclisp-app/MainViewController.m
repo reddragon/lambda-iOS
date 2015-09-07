@@ -8,15 +8,24 @@
 
 #import "MainViewController.h"
 
+#import "lang/Lang.h"
+
 @interface MainViewController ()
 @property (strong, nonatomic) IBOutlet UITextView *contentScreen;
 @property (strong, nonatomic) IBOutlet UITextField *inputField;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *bottomPaddingConstraint;
 @property CGFloat initialPaddingConstant;
-
+@property NSOperationQueue* evalQueue;
+@property GoLangLangEnv* env;
 @end
 
 @implementation MainViewController
+
+- (id)init {
+    self = [super init];
+    self.env = GoLangNewEnv();
+    return self;
+}
 
 - (void)viewWillAppear:(BOOL)animated {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
@@ -58,24 +67,27 @@
     
     self.inputField.delegate = self;
     [self.view addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self.view action:@selector(endEditing:)]];
-    // Do any additional setup after loading the view from its nib.
-    // self.contentScreen.editable = NO;
+    
     self.contentScreen.text = @"> ";
     self.contentScreen.userInteractionEnabled = YES;
     self.contentScreen.scrollEnabled = YES;
     self.contentScreen.editable = NO;
     self.contentScreen.layoutManager.allowsNonContiguousLayout = NO;
+    
+    self.evalQueue = [[NSOperationQueue alloc] init];
 }
 
-/*
-- (void)textFieldDidEndEditing:(UITextField *)textField {
-    NSLog(@"Field ended editing");
-    if (textField == self.inputField) {
-        NSLog(@"It was inputField");
-        [self.view endEditing:YES];
+- (NSString*)evaluate:(NSString*)expr {
+    NSString* result;
+    GoLangAtom *atom = GoLangEval(expr, GoLangNewEnv());
+    if (atom.Err.length > 0) {
+        result = atom.Err;
+    } else {
+        result = [atom.Val Str];
     }
+    return result;
 }
-*/
+
 
 -(void)scrollTextViewToBottom:(UITextView *)textView {
     if(textView.text.length > 0 ) {
@@ -86,9 +98,8 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     NSLog(@"Input: %@", self.inputField.text);
-    // TODO Replace the result with the string evaluation result
-    NSString *result = @"1";
-
+    
+    NSString *result = [self evaluate:self.inputField.text];
     self.contentScreen.text = [self.contentScreen.text stringByAppendingString:[NSString stringWithFormat:@"%@\n%@\n\n> ", self.inputField.text, result]];
     self.inputField.text = @"";
     [self scrollTextViewToBottom:self.contentScreen];

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C6AD71A11B9D7BF5008B4739 /* lang.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6AD71A01B9D7BF5008B4739 /* lang.framework */; };
 		C6C300F01B92FD19007A7E3C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C6C300EF1B92FD19007A7E3C /* main.m */; };
 		C6C300F31B92FD19007A7E3C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C6C300F21B92FD19007A7E3C /* AppDelegate.m */; };
 		C6C300FB1B92FD19007A7E3C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6C300FA1B92FD19007A7E3C /* Images.xcassets */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C6AD71A01B9D7BF5008B4739 /* lang.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = lang.framework; path = ../go/src/github.com/reddragon/eclisp/lang/lang.framework; sourceTree = "<group>"; };
 		C6C300EA1B92FD19007A7E3C /* eclisp-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "eclisp-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6C300EE1B92FD19007A7E3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C6C300EF1B92FD19007A7E3C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -47,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6AD71A11B9D7BF5008B4739 /* lang.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +66,7 @@
 		C6C300E11B92FD19007A7E3C = {
 			isa = PBXGroup;
 			children = (
+				C6AD71A01B9D7BF5008B4739 /* lang.framework */,
 				C6C300EC1B92FD19007A7E3C /* eclisp-app */,
 				C6C301061B92FD19007A7E3C /* eclisp-appTests */,
 				C6C300EB1B92FD19007A7E3C /* Products */,
@@ -339,34 +343,49 @@
 		C6C3010E1B92FD19007A7E3C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = (
+					"$(ARCHS_STANDARD)",
+					arm64,
+					"$(ARCHS_STANDARD_64_BIT)",
+				);
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/gauravmenghani/work/go/src/github.com/reddragon/eclisp,
+					/Users/gauravmenghani/work/go/src/github.com/reddragon/eclisp/lang,
 				);
 				INFOPLIST_FILE = "eclisp-app/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = arm64;
 			};
 			name = Debug;
 		};
 		C6C3010F1B92FD19007A7E3C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = (
+					"$(ARCHS_STANDARD)",
+					arm64,
+					"$(ARCHS_STANDARD_64_BIT)",
+				);
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/gauravmenghani/work/go/src/github.com/reddragon/eclisp,
+					/Users/gauravmenghani/work/go/src/github.com/reddragon/eclisp/lang,
 				);
 				INFOPLIST_FILE = "eclisp-app/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = arm64;
 			};
 			name = Release;
 		};

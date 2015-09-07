@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface MainViewController : UIViewController <UITextFieldDelegate>
-
+- (id) init;
+- (NSString*)evaluate:(NSString*)expr;
 @end
