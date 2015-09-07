@@ -59,8 +59,12 @@
     self.inputField.delegate = self;
     [self.view addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self.view action:@selector(endEditing:)]];
     // Do any additional setup after loading the view from its nib.
-    self.contentScreen.editable = NO;
+    // self.contentScreen.editable = NO;
     self.contentScreen.text = @"> ";
+    self.contentScreen.userInteractionEnabled = YES;
+    self.contentScreen.scrollEnabled = YES;
+    self.contentScreen.editable = NO;
+    self.contentScreen.layoutManager.allowsNonContiguousLayout = NO;
 }
 
 /*
@@ -73,13 +77,22 @@
 }
 */
 
+-(void)scrollTextViewToBottom:(UITextView *)textView {
+    if(textView.text.length > 0 ) {
+        NSRange bottom = NSMakeRange(textView.text.length -1, 1);
+        [textView scrollRangeToVisible:bottom];
+    }
+}
+
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     NSLog(@"Input: %@", self.inputField.text);
     // TODO Replace the result with the string evaluation result
     NSString *result = @"1";
-    self.contentScreen.text =
-        [NSString stringWithFormat:@"%@%@\n%@\n\n> ", self.contentScreen.text, self.inputField.text, result];
+
+    self.contentScreen.text = [self.contentScreen.text stringByAppendingString:[NSString stringWithFormat:@"%@\n%@\n\n> ", self.inputField.text, result]];
     self.inputField.text = @"";
+    [self scrollTextViewToBottom:self.contentScreen];
+
     return YES;
 }
 
