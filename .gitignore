@@ -36,7 +36,7 @@ xcuserdata
 # you should judge for yourself, the pros and cons are mentioned at:
 # http://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control
 #
-#Pods/
+Pods/
 
 # Carthage
 #
@@ -44,6 +44,7 @@ xcuserdata
 # Carthage/Checkouts
 
 Carthage/Build
+eclisp-cc/
 
 ### Objective-C Patch ###
 *.xcscmblueprint
