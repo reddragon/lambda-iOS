@@ -29,6 +29,7 @@
     self.window.rootViewController = nvc;
     [self.window makeKeyAndVisible];
     
+    /*
     [ParseCrashReporting enable];
     [Parse setApplicationId:@"qYgM5bGvn2fLKalvj6l3LvztrESKvntm7d6U8ty5"
                   clientKey:@"AOfrkfhuNo9JQNoNPnrGonVEzJOuSucUIFJvxy72"];
@@ -37,6 +38,7 @@
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [NSException raise:NSGenericException format:@"Everything is ok. This is just a test crash."];
     });
+    */
     
     return YES;
 }

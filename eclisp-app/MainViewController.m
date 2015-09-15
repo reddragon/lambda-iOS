@@ -79,7 +79,7 @@
 
 - (NSString*)evaluate:(NSString*)expr {
     NSString* result;
-    GoLangAtom *atom = GoLangEval(expr, GoLangNewEnv());
+    GoLangAtom *atom = GoLangEval(expr, self.env);
     if (atom.Err.length > 0) {
         result = atom.Err;
     } else {
