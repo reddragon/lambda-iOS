@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A40AA40AC418E479F47FF0AD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 50BFA3D82A0ECF826DF4D98E /* libPods.a */; };
-		C618150F1BA7D50F002A8CFB /* lang.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C618150E1BA7D50F002A8CFB /* lang.framework */; };
+		C68991BD1BBFE9F30031CEAE /* lang.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C68991BC1BBFE9F30031CEAE /* lang.framework */; settings = {ASSET_TAGS = (); }; };
 		C6C300F01B92FD19007A7E3C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C6C300EF1B92FD19007A7E3C /* main.m */; };
 		C6C300F31B92FD19007A7E3C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C6C300F21B92FD19007A7E3C /* AppDelegate.m */; };
 		C6C300FB1B92FD19007A7E3C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6C300FA1B92FD19007A7E3C /* Images.xcassets */; };
@@ -32,7 +32,7 @@
 		2605B3E2195BFEC8FF34D627 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		30778AB44FBA5EEC022FDBEC /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		50BFA3D82A0ECF826DF4D98E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		C618150E1BA7D50F002A8CFB /* lang.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = lang.framework; path = ../go/src/github.com/reddragon/eclisp/lang.framework; sourceTree = "<group>"; };
+		C68991BC1BBFE9F30031CEAE /* lang.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = lang.framework; path = ../go/src/github.com/reddragon/lambda/lang.framework; sourceTree = "<group>"; };
 		C6C300EA1B92FD19007A7E3C /* eclisp-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "eclisp-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6C300EE1B92FD19007A7E3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C6C300EF1B92FD19007A7E3C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -53,7 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C618150F1BA7D50F002A8CFB /* lang.framework in Frameworks */,
+				C68991BD1BBFE9F30031CEAE /* lang.framework in Frameworks */,
 				A40AA40AC418E479F47FF0AD /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -79,7 +79,7 @@
 		C6C300E11B92FD19007A7E3C = {
 			isa = PBXGroup;
 			children = (
-				C618150E1BA7D50F002A8CFB /* lang.framework */,
+				C68991BC1BBFE9F30031CEAE /* lang.framework */,
 				C6C300EC1B92FD19007A7E3C /* eclisp-app */,
 				C6C301061B92FD19007A7E3C /* eclisp-appTests */,
 				C6C300EB1B92FD19007A7E3C /* Products */,
@@ -194,7 +194,7 @@
 		C6C300E21B92FD19007A7E3C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Gaurav Menghani";
 				TargetAttributes = {
 					C6C300E91B92FD19007A7E3C = {
@@ -354,6 +354,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -417,22 +418,18 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 30778AB44FBA5EEC022FDBEC /* Pods.debug.xcconfig */;
 			buildSettings = {
-				ARCHS = (
-					"$(ARCHS_STANDARD)",
-					arm64,
-					"$(ARCHS_STANDARD_64_BIT)",
-				);
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/gauravmenghani/work/go/src/github.com/reddragon/eclisp,
-					/Users/gauravmenghani/work/go/src/github.com/reddragon/eclisp/lang,
+					/Users/gauravmenghani/work/go/src/github.com/reddragon/lambda,
+					/Users/gauravmenghani/work/go/src/github.com/reddragon/lambda/lang,
 				);
 				INFOPLIST_FILE = "eclisp-app/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cacheoblivious.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = arm64;
@@ -443,21 +440,17 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2605B3E2195BFEC8FF34D627 /* Pods.release.xcconfig */;
 			buildSettings = {
-				ARCHS = (
-					"$(ARCHS_STANDARD)",
-					arm64,
-					"$(ARCHS_STANDARD_64_BIT)",
-				);
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/gauravmenghani/work/go/src/github.com/reddragon/eclisp,
-					/Users/gauravmenghani/work/go/src/github.com/reddragon/eclisp/lang,
+					/Users/gauravmenghani/work/go/src/github.com/reddragon/lambda,
+					/Users/gauravmenghani/work/go/src/github.com/reddragon/lambda/lang,
 				);
 				INFOPLIST_FILE = "eclisp-app/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cacheoblivious.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = arm64;
@@ -478,6 +471,7 @@
 				);
 				INFOPLIST_FILE = "eclisp-appTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cacheoblivious.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/eclisp-app.app/eclisp-app";
 			};
@@ -493,6 +487,7 @@
 				);
 				INFOPLIST_FILE = "eclisp-appTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cacheoblivious.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/eclisp-app.app/eclisp-app";
 			};

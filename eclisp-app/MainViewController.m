@@ -79,11 +79,12 @@
 
 - (NSString*)evaluate:(NSString*)expr {
     NSString* result;
-    GoLangAtom *atom = GoLangEval(expr, self.env);
-    if (atom.Err.length > 0) {
-        result = atom.Err;
+    
+    GoLangEvalResult *evalResult = GoLangEval(expr, self.env);
+    if (evalResult.ErrStr.length > 0) {
+        result = evalResult.ErrStr;
     } else {
-        result = [atom.Val Str];
+        result = evalResult.ValStr;
     }
     return result;
 }
