@@ -33,14 +33,14 @@
 		30778AB44FBA5EEC022FDBEC /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		50BFA3D82A0ECF826DF4D98E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C68991BC1BBFE9F30031CEAE /* lang.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = lang.framework; path = ../go/src/github.com/reddragon/lambda/lang.framework; sourceTree = "<group>"; };
-		C6C300EA1B92FD19007A7E3C /* eclisp-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "eclisp-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6C300EA1B92FD19007A7E3C /* lambda-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "lambda-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6C300EE1B92FD19007A7E3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C6C300EF1B92FD19007A7E3C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C6C300F11B92FD19007A7E3C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C6C300F21B92FD19007A7E3C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		C6C300FA1B92FD19007A7E3C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C6C300FD1B92FD19007A7E3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		C6C301031B92FD19007A7E3C /* eclisp-appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "eclisp-appTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6C301031B92FD19007A7E3C /* lambda-app.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "lambda-app.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6C301081B92FD19007A7E3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C6C301091B92FD19007A7E3C /* eclisp_appTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = eclisp_appTests.m; sourceTree = "<group>"; };
 		C6C3011E1B938FFA007A7E3C /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
@@ -80,8 +80,8 @@
 			isa = PBXGroup;
 			children = (
 				C68991BC1BBFE9F30031CEAE /* lang.framework */,
-				C6C300EC1B92FD19007A7E3C /* eclisp-app */,
-				C6C301061B92FD19007A7E3C /* eclisp-appTests */,
+				C6C300EC1B92FD19007A7E3C /* lamda-app */,
+				C6C301061B92FD19007A7E3C /* lambda-appTests */,
 				C6C300EB1B92FD19007A7E3C /* Products */,
 				D67DAE5D79714461B7A92EE8 /* Pods */,
 				5E80A67CB159A44431F4D2DE /* Frameworks */,
@@ -91,13 +91,13 @@
 		C6C300EB1B92FD19007A7E3C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C6C300EA1B92FD19007A7E3C /* eclisp-app.app */,
-				C6C301031B92FD19007A7E3C /* eclisp-appTests.xctest */,
+				C6C300EA1B92FD19007A7E3C /* lambda-app.app */,
+				C6C301031B92FD19007A7E3C /* lambda-app.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C6C300EC1B92FD19007A7E3C /* eclisp-app */ = {
+		C6C300EC1B92FD19007A7E3C /* lamda-app */ = {
 			isa = PBXGroup;
 			children = (
 				C6C300F11B92FD19007A7E3C /* AppDelegate.h */,
@@ -109,6 +109,7 @@
 				C6C3011F1B938FFA007A7E3C /* MainViewController.m */,
 				C6C301201B938FFA007A7E3C /* MainViewController.xib */,
 			);
+			name = "lamda-app";
 			path = "eclisp-app";
 			sourceTree = "<group>";
 		};
@@ -121,12 +122,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		C6C301061B92FD19007A7E3C /* eclisp-appTests */ = {
+		C6C301061B92FD19007A7E3C /* lambda-appTests */ = {
 			isa = PBXGroup;
 			children = (
 				C6C301091B92FD19007A7E3C /* eclisp_appTests.m */,
 				C6C301071B92FD19007A7E3C /* Supporting Files */,
 			);
+			name = "lambda-appTests";
 			path = "eclisp-appTests";
 			sourceTree = "<group>";
 		};
@@ -150,9 +152,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C6C300E91B92FD19007A7E3C /* eclisp-app */ = {
+		C6C300E91B92FD19007A7E3C /* lambda-app */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C6C3010D1B92FD19007A7E3C /* Build configuration list for PBXNativeTarget "eclisp-app" */;
+			buildConfigurationList = C6C3010D1B92FD19007A7E3C /* Build configuration list for PBXNativeTarget "lambda-app" */;
 			buildPhases = (
 				B33F34C96B306F5A2BC42DCF /* Check Pods Manifest.lock */,
 				C6C300E61B92FD19007A7E3C /* Sources */,
@@ -165,14 +167,14 @@
 			);
 			dependencies = (
 			);
-			name = "eclisp-app";
+			name = "lambda-app";
 			productName = "eclisp-app";
-			productReference = C6C300EA1B92FD19007A7E3C /* eclisp-app.app */;
+			productReference = C6C300EA1B92FD19007A7E3C /* lambda-app.app */;
 			productType = "com.apple.product-type.application";
 		};
-		C6C301021B92FD19007A7E3C /* eclisp-appTests */ = {
+		C6C301021B92FD19007A7E3C /* lambda-appTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C6C301101B92FD19007A7E3C /* Build configuration list for PBXNativeTarget "eclisp-appTests" */;
+			buildConfigurationList = C6C301101B92FD19007A7E3C /* Build configuration list for PBXNativeTarget "lambda-appTests" */;
 			buildPhases = (
 				C6C300FF1B92FD19007A7E3C /* Sources */,
 				C6C301001B92FD19007A7E3C /* Frameworks */,
@@ -183,9 +185,9 @@
 			dependencies = (
 				C6C301051B92FD19007A7E3C /* PBXTargetDependency */,
 			);
-			name = "eclisp-appTests";
+			name = "lambda-appTests";
 			productName = "eclisp-appTests";
-			productReference = C6C301031B92FD19007A7E3C /* eclisp-appTests.xctest */;
+			productReference = C6C301031B92FD19007A7E3C /* lambda-app.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -207,7 +209,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C6C300E51B92FD19007A7E3C /* Build configuration list for PBXProject "eclisp-app" */;
+			buildConfigurationList = C6C300E51B92FD19007A7E3C /* Build configuration list for PBXProject "lambda-app" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -220,8 +222,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C6C300E91B92FD19007A7E3C /* eclisp-app */,
-				C6C301021B92FD19007A7E3C /* eclisp-appTests */,
+				C6C300E91B92FD19007A7E3C /* lambda-app */,
+				C6C301021B92FD19007A7E3C /* lambda-appTests */,
 			);
 		};
 /* End PBXProject section */
@@ -316,7 +318,7 @@
 /* Begin PBXTargetDependency section */
 		C6C301051B92FD19007A7E3C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = C6C300E91B92FD19007A7E3C /* eclisp-app */;
+			target = C6C300E91B92FD19007A7E3C /* lambda-app */;
 			targetProxy = C6C301041B92FD19007A7E3C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -429,8 +431,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.cacheoblivious.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cacheoblivious.lambda-app";
+				PRODUCT_NAME = "lambda-app";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = arm64;
 			};
@@ -450,8 +452,8 @@
 				INFOPLIST_FILE = "eclisp-app/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.cacheoblivious.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cacheoblivious.lambda-app";
+				PRODUCT_NAME = "lambda-app";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = arm64;
 			};
@@ -472,8 +474,8 @@
 				INFOPLIST_FILE = "eclisp-appTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cacheoblivious.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/eclisp-app.app/eclisp-app";
+				PRODUCT_NAME = "lambda-app";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/lambda-app.app/lambda-app";
 			};
 			name = Debug;
 		};
@@ -488,15 +490,15 @@
 				INFOPLIST_FILE = "eclisp-appTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cacheoblivious.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/eclisp-app.app/eclisp-app";
+				PRODUCT_NAME = "lambda-app";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/lambda-app.app/lambda-app";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C6C300E51B92FD19007A7E3C /* Build configuration list for PBXProject "eclisp-app" */ = {
+		C6C300E51B92FD19007A7E3C /* Build configuration list for PBXProject "lambda-app" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C6C3010B1B92FD19007A7E3C /* Debug */,
@@ -505,7 +507,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C6C3010D1B92FD19007A7E3C /* Build configuration list for PBXNativeTarget "eclisp-app" */ = {
+		C6C3010D1B92FD19007A7E3C /* Build configuration list for PBXNativeTarget "lambda-app" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C6C3010E1B92FD19007A7E3C /* Debug */,
@@ -514,7 +516,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C6C301101B92FD19007A7E3C /* Build configuration list for PBXNativeTarget "eclisp-appTests" */ = {
+		C6C301101B92FD19007A7E3C /* Build configuration list for PBXNativeTarget "lambda-appTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C6C301111B92FD19007A7E3C /* Debug */,

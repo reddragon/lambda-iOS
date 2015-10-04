@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:eclisp-app.xcodeproj">
+      location = "group:/Users/gauravmenghani/work/eclisp-app/lambda-app.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
