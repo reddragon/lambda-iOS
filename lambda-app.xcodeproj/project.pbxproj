@@ -24,7 +24,7 @@
 			containerPortal = C6C300E21B92FD19007A7E3C /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = C6C300E91B92FD19007A7E3C;
-			remoteInfo = "eclisp-app";
+			remoteInfo = "lambda-app";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -110,7 +110,7 @@
 				C6C301201B938FFA007A7E3C /* MainViewController.xib */,
 			);
 			name = "lamda-app";
-			path = "eclisp-app";
+			path = "lambda-app";
 			sourceTree = "<group>";
 		};
 		C6C300ED1B92FD19007A7E3C /* Supporting Files */ = {
@@ -128,8 +128,7 @@
 				C6C301091B92FD19007A7E3C /* eclisp_appTests.m */,
 				C6C301071B92FD19007A7E3C /* Supporting Files */,
 			);
-			name = "lambda-appTests";
-			path = "eclisp-appTests";
+			path = "lambda-appTests";
 			sourceTree = "<group>";
 		};
 		C6C301071B92FD19007A7E3C /* Supporting Files */ = {
@@ -161,14 +160,13 @@
 				C6C300E71B92FD19007A7E3C /* Frameworks */,
 				C6C300E81B92FD19007A7E3C /* Resources */,
 				6AA85A1EA38C65EA601C5833 /* Copy Pods Resources */,
-				C61814CF1BA00C3B002A8CFB /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "lambda-app";
-			productName = "eclisp-app";
+			productName = "lambda-app";
 			productReference = C6C300EA1B92FD19007A7E3C /* lambda-app.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -186,7 +184,7 @@
 				C6C301051B92FD19007A7E3C /* PBXTargetDependency */,
 			);
 			name = "lambda-appTests";
-			productName = "eclisp-appTests";
+			productName = "lambda-appTests";
 			productReference = C6C301031B92FD19007A7E3C /* lambda-app.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
@@ -278,19 +276,6 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
-		};
-		C61814CF1BA00C3B002A8CFB /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "export PATH=/usr/local/bin:$PATH\ncd /Users/gauravmenghani/work/eclisp-app/eclisp-cc\n\nparse symbols -p \"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -427,7 +412,7 @@
 					/Users/gauravmenghani/work/go/src/github.com/reddragon/lambda,
 					/Users/gauravmenghani/work/go/src/github.com/reddragon/lambda/lang,
 				);
-				INFOPLIST_FILE = "eclisp-app/Info.plist";
+				INFOPLIST_FILE = "lambda-app/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
@@ -449,7 +434,7 @@
 					/Users/gauravmenghani/work/go/src/github.com/reddragon/lambda,
 					/Users/gauravmenghani/work/go/src/github.com/reddragon/lambda/lang,
 				);
-				INFOPLIST_FILE = "eclisp-app/Info.plist";
+				INFOPLIST_FILE = "lambda-app/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cacheoblivious.lambda-app";
@@ -471,7 +456,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "eclisp-appTests/Info.plist";
+				INFOPLIST_FILE = "lambda-appTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cacheoblivious.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "lambda-app";
@@ -487,7 +472,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "eclisp-appTests/Info.plist";
+				INFOPLIST_FILE = "lambda-appTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cacheoblivious.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "lambda-app";
