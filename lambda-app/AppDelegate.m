@@ -10,9 +10,6 @@
 
 #import "MainViewController.h"
 
-#import <Parse/Parse.h>
-#import <ParseCrashReporting/ParseCrashReporting.h>
-
 @interface AppDelegate ()
 
 @end
