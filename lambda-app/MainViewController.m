@@ -10,6 +10,8 @@
 
 #import "lang/Lang.h"
 
+#import "KeyboardHelperView.h"
+
 @interface MainViewController ()
 @property (strong, nonatomic) IBOutlet UITextView *contentScreen;
 @property (strong, nonatomic) IBOutlet UITextField *inputField;
@@ -28,6 +30,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
 }
@@ -36,6 +39,7 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
 }
+
 
 - (void)keyboardWillShow:(NSNotification*) notification {
     NSLog(@"KeyboardWillShow");
@@ -65,8 +69,11 @@
     self.inputField.clearButtonMode = UITextFieldViewModeWhileEditing;
     self.initialPaddingConstant = self.bottomPaddingConstraint.constant;
     
+    self.inputField.inputAccessoryView = [[KeyboardHelperView alloc] init];
     self.inputField.delegate = self;
     [self.view addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self.view action:@selector(endEditing:)]];
+    
+    [self.inputField becomeFirstResponder];
     
     self.contentScreen.text = @"> ";
     self.contentScreen.userInteractionEnabled = YES;
@@ -95,6 +102,23 @@
         NSRange bottom = NSMakeRange(textView.text.length -1, 1);
         [textView scrollRangeToVisible:bottom];
     }
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    NSLog(@"Began editing");
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    NSLog(@"Ended editing");
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    NSLog(@"Should edit: %@, range loc: %lu, len: %lu.", string, (unsigned long)range.location, (unsigned long)range.length);
+    NSLog(@"Keyboard type: %ld", (long)textField.keyboardType);
+    textField.keyboardType = UIKeyboardTypeNumberPad;
+    [textField resignFirstResponder];
+    [textField becomeFirstResponder];
+    return YES;
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
