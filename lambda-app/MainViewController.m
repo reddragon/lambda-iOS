@@ -10,7 +10,7 @@
 
 #import "lang/Lang.h"
 
-#import "KeyboardHelperView.h"
+#import "HelperViewController.h"
 
 @interface MainViewController ()
 @property (strong, nonatomic) IBOutlet UITextView *contentScreen;
@@ -19,6 +19,7 @@
 @property CGFloat initialPaddingConstant;
 @property NSOperationQueue* evalQueue;
 @property GoLangLangEnv* env;
+@property (strong, nonatomic) HelperViewController *helperVC;
 @end
 
 @implementation MainViewController
@@ -26,6 +27,8 @@
 - (id)init {
     self = [super init];
     self.env = GoLangNewEnv();
+    self.helperVC = [[HelperViewController alloc] init];
+    [self addChildViewController:self.helperVC];
     return self;
 }
 
@@ -69,7 +72,6 @@
     self.inputField.clearButtonMode = UITextFieldViewModeWhileEditing;
     self.initialPaddingConstant = self.bottomPaddingConstraint.constant;
     
-    self.inputField.inputAccessoryView = [[KeyboardHelperView alloc] init];
     self.inputField.delegate = self;
     [self.view addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self.view action:@selector(endEditing:)]];
     
@@ -106,6 +108,9 @@
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
     NSLog(@"Began editing");
+    // UIView* hview = [[KeyboardHelperView alloc] initView:self.view];
+    [textField setInputAccessoryView:self.helperVC.view];
+    // [textField setInputAccessoryView:[[UIView alloc] initWithFrame:CGRectMake(10.0, 0.0, 310.0, 40.0)]];
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
@@ -115,7 +120,6 @@
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
     NSLog(@"Should edit: %@, range loc: %lu, len: %lu.", string, (unsigned long)range.location, (unsigned long)range.length);
     NSLog(@"Keyboard type: %ld", (long)textField.keyboardType);
-    textField.keyboardType = UIKeyboardTypeNumberPad;
     [textField resignFirstResponder];
     [textField becomeFirstResponder];
     return YES;

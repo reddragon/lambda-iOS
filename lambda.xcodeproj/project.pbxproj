@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C644F49A1BCB4226005FD51F /* KeyboardHelperView.m in Sources */ = {isa = PBXBuildFile; fileRef = C644F4991BCB4226005FD51F /* KeyboardHelperView.m */; settings = {ASSET_TAGS = (); }; };
 		C66E5C8E1BC1F2BE008BFE59 /* Icon-60.png in Resources */ = {isa = PBXBuildFile; fileRef = C66E5C7C1BC1F2BE008BFE59 /* Icon-60.png */; settings = {ASSET_TAGS = (); }; };
 		C66E5C8F1BC1F2BE008BFE59 /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C66E5C7D1BC1F2BE008BFE59 /* Icon-60@2x.png */; settings = {ASSET_TAGS = (); }; };
 		C66E5C901BC1F2BE008BFE59 /* Icon-60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C66E5C7E1BC1F2BE008BFE59 /* Icon-60@3x.png */; settings = {ASSET_TAGS = (); }; };
@@ -27,7 +26,8 @@
 		C66E5C9E1BC1F2BE008BFE59 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C66E5C8C1BC1F2BE008BFE59 /* Icon@2x.png */; settings = {ASSET_TAGS = (); }; };
 		C66E5C9F1BC1F2BE008BFE59 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C66E5C8D1BC1F2BE008BFE59 /* iTunesArtwork@2x.png */; settings = {ASSET_TAGS = (); }; };
 		C68991BD1BBFE9F30031CEAE /* lang.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C68991BC1BBFE9F30031CEAE /* lang.framework */; settings = {ASSET_TAGS = (); }; };
-		C6942EF31BCCDB1600176870 /* KeyboardHelperView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6942EF21BCCDB1600176870 /* KeyboardHelperView.xib */; settings = {ASSET_TAGS = (); }; };
+		C6942EF71BCE2BAD00176870 /* HelperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6942EF51BCE2BAD00176870 /* HelperViewController.m */; settings = {ASSET_TAGS = (); }; };
+		C6942EF81BCE2BAD00176870 /* HelperViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6942EF61BCE2BAD00176870 /* HelperViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		C6C300F01B92FD19007A7E3C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C6C300EF1B92FD19007A7E3C /* main.m */; };
 		C6C300F31B92FD19007A7E3C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C6C300F21B92FD19007A7E3C /* AppDelegate.m */; };
 		C6C300FB1B92FD19007A7E3C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6C300FA1B92FD19007A7E3C /* Images.xcassets */; };
@@ -48,8 +48,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		C644F4981BCB4226005FD51F /* KeyboardHelperView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardHelperView.h; sourceTree = "<group>"; };
-		C644F4991BCB4226005FD51F /* KeyboardHelperView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyboardHelperView.m; sourceTree = "<group>"; };
 		C66E5C7C1BC1F2BE008BFE59 /* Icon-60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60.png"; sourceTree = "<group>"; };
 		C66E5C7D1BC1F2BE008BFE59 /* Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60@2x.png"; sourceTree = "<group>"; };
 		C66E5C7E1BC1F2BE008BFE59 /* Icon-60@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60@3x.png"; sourceTree = "<group>"; };
@@ -69,7 +67,9 @@
 		C66E5C8C1BC1F2BE008BFE59 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		C66E5C8D1BC1F2BE008BFE59 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
 		C68991BC1BBFE9F30031CEAE /* lang.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = lang.framework; path = ../go/src/github.com/reddragon/lambda/lang.framework; sourceTree = "<group>"; };
-		C6942EF21BCCDB1600176870 /* KeyboardHelperView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KeyboardHelperView.xib; sourceTree = "<group>"; };
+		C6942EF41BCE2BAD00176870 /* HelperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelperViewController.h; sourceTree = "<group>"; };
+		C6942EF51BCE2BAD00176870 /* HelperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelperViewController.m; sourceTree = "<group>"; };
+		C6942EF61BCE2BAD00176870 /* HelperViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HelperViewController.xib; sourceTree = "<group>"; };
 		C6C300EA1B92FD19007A7E3C /* lambda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lambda.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6C300EE1B92FD19007A7E3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C6C300EF1B92FD19007A7E3C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -167,9 +167,9 @@
 				C6C3011E1B938FFA007A7E3C /* MainViewController.h */,
 				C6C3011F1B938FFA007A7E3C /* MainViewController.m */,
 				C6C301201B938FFA007A7E3C /* MainViewController.xib */,
-				C644F4981BCB4226005FD51F /* KeyboardHelperView.h */,
-				C644F4991BCB4226005FD51F /* KeyboardHelperView.m */,
-				C6942EF21BCCDB1600176870 /* KeyboardHelperView.xib */,
+				C6942EF41BCE2BAD00176870 /* HelperViewController.h */,
+				C6942EF51BCE2BAD00176870 /* HelperViewController.m */,
+				C6942EF61BCE2BAD00176870 /* HelperViewController.xib */,
 			);
 			name = "lamda-app";
 			path = "lambda-app";
@@ -286,7 +286,7 @@
 				C66E5C9A1BC1F2BE008BFE59 /* Icon-Small.png in Resources */,
 				C66E5C901BC1F2BE008BFE59 /* Icon-60@3x.png in Resources */,
 				C66E5C981BC1F2BE008BFE59 /* Icon-Small-50.png in Resources */,
-				C6942EF31BCCDB1600176870 /* KeyboardHelperView.xib in Resources */,
+				C6942EF81BCE2BAD00176870 /* HelperViewController.xib in Resources */,
 				C66E5C961BC1F2BE008BFE59 /* Icon-Small-40@2x.png in Resources */,
 				C66E5C9B1BC1F2BE008BFE59 /* Icon-Small@2x.png in Resources */,
 				C66E5C951BC1F2BE008BFE59 /* Icon-Small-40.png in Resources */,
@@ -323,9 +323,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C6C300F31B92FD19007A7E3C /* AppDelegate.m in Sources */,
+				C6942EF71BCE2BAD00176870 /* HelperViewController.m in Sources */,
 				C6C301211B938FFA007A7E3C /* MainViewController.m in Sources */,
 				C6C300F01B92FD19007A7E3C /* main.m in Sources */,
-				C644F49A1BCB4226005FD51F /* KeyboardHelperView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
