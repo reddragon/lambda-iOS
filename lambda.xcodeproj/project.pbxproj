@@ -77,7 +77,7 @@
 		C6C300F21B92FD19007A7E3C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		C6C300FA1B92FD19007A7E3C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C6C300FD1B92FD19007A7E3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		C6C301031B92FD19007A7E3C /* lambda */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = lambda; path = lambda.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6C301031B92FD19007A7E3C /* lambda.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = lambda.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6C301081B92FD19007A7E3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C6C301091B92FD19007A7E3C /* eclisp_appTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = eclisp_appTests.m; sourceTree = "<group>"; };
 		C6C3011E1B938FFA007A7E3C /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
@@ -151,7 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				C6C300EA1B92FD19007A7E3C /* lambda.app */,
-				C6C301031B92FD19007A7E3C /* lambda */,
+				C6C301031B92FD19007A7E3C /* lambda.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -237,7 +237,7 @@
 			);
 			name = lambdaTests;
 			productName = "lambda-appTests";
-			productReference = C6C301031B92FD19007A7E3C /* lambda */;
+			productReference = C6C301031B92FD19007A7E3C /* lambda.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
