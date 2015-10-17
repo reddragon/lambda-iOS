@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface HelperViewController : UIViewController
-
+- (id)initWithDelegate;
 @end

@@ -27,7 +27,7 @@
 - (id)init {
     self = [super init];
     self.env = GoLangNewEnv();
-    self.helperVC = [[HelperViewController alloc] init];
+    self.helperVC = [[HelperViewController alloc] initWithDelegate];
     [self addChildViewController:self.helperVC];
     return self;
 }

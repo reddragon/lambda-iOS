@@ -10,26 +10,43 @@
 
 @interface HelperViewController ()
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *firstViewLeftGap;
+@property (strong, nonatomic) IBOutlet UIView *openBracketButton;
 
 @end
 
 @implementation HelperViewController
 
+- (void)onButtonTap:(UIView*)target {
+    NSLog(@"Button was tapped.");
+    [UIView animateWithDuration:1 animations:^{
+        target.transform = CGAffineTransformMakeScale(1.25, 1.25);
+    } completion:^(BOOL finished) {
+        
+    }];
+}
+
+- (void)setupButtonDefaults:(UIView*)button {
+    UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onButtonTap:)];
+    [button addGestureRecognizer:gesture];
+    [button setUserInteractionEnabled:YES];
+}
+
+- (id)initWithDelegate {
+    return self;
+}
+
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
-    NSLog(@"SWidth: %f", self.view.frame.size.width);
-    NSLog(@"SSWidth: %f", self.view.superview.frame.size.width);
-    
     NSUInteger numViews = self.view.subviews.count;
     if (numViews > 0) {
-        NSLog(@"Width: %f", self.view.frame.size.width);
+        // NSLog(@"Width: %f", self.view.frame.size.width);
         
         float maxX = 0;
         UIView *lastView = nil;
         for (NSUInteger i = 0; i < numViews; i++) {
             UIView *curView = self.view.subviews[i];
             float dis = curView.frame.origin.x + curView.frame.size.width;
-            NSLog(@"Last view %lu end: %f", (unsigned long)i, dis);
+            // NSLog(@"Last view %lu end: %f", (unsigned long)i, dis);
             if (maxX < dis) {
                 maxX = dis;
                 lastView = curView;
@@ -51,7 +68,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
+    NSLog(@"Setting up the buttons");
+    [self setupButtonDefaults:self.openBracketButton];
 
 }
 
