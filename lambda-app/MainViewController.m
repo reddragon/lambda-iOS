@@ -20,6 +20,7 @@
 @property NSOperationQueue* evalQueue;
 @property GoLangLangEnv* env;
 @property (strong, nonatomic) HelperViewController *helperVC;
+@property (strong, nonatomic) NSString *prevString;
 @end
 
 @implementation MainViewController
@@ -27,9 +28,55 @@
 - (id)init {
     self = [super init];
     self.env = GoLangNewEnv();
-    self.helperVC = [[HelperViewController alloc] initWithDelegate];
+    self.helperVC = [[HelperViewController alloc] initWithDelegate:self];
     [self addChildViewController:self.helperVC];
     return self;
+}
+
+- (void)handleButton:(ButtonType)buttonType {
+    NSLog(@"Button hit with: %d", buttonType);
+    switch (buttonType) {
+        case kOpenBracket:
+            self.inputField.text = [NSString stringWithFormat:@"%@%s", self.inputField.text, "("];
+            break;
+        
+        case kClosedBracket:
+            self.inputField.text = [NSString stringWithFormat:@"%@%s", self.inputField.text, ")"];
+            break;
+        
+        case kAdd:
+            self.inputField.text = [NSString stringWithFormat:@"%@%s", self.inputField.text, "+ "];
+            break;
+        
+        case kSubtract:
+            self.inputField.text = [NSString stringWithFormat:@"%@%s", self.inputField.text, "- "];
+            break;
+        
+        case kMultiply:
+            self.inputField.text = [NSString stringWithFormat:@"%@%s", self.inputField.text, "* "];
+            break;
+            
+        case kDivide:
+            self.inputField.text = [NSString stringWithFormat:@"%@%s", self.inputField.text, "/ "];
+            break;
+        
+        case kDefvar:
+            self.inputField.text = [NSString stringWithFormat:@"%@%s", self.inputField.text, "defvar "];
+            break;
+        
+        case kDefun:
+            self.inputField.text = [NSString stringWithFormat:@"%@%s", self.inputField.text, "defun "];
+            break;
+        
+        case kRepeat:
+            if (self.prevString != nil) {
+                self.inputField.text = self.prevString;
+            }
+            break;
+            
+        default:
+            break;
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -130,6 +177,7 @@
     
     NSString *result = [self evaluate:self.inputField.text];
     self.contentScreen.text = [self.contentScreen.text stringByAppendingString:[NSString stringWithFormat:@"%@\n%@\n\n> ", self.inputField.text, result]];
+    self.prevString = self.inputField.text;
     self.inputField.text = @"";
     [self scrollTextViewToBottom:self.contentScreen];
 

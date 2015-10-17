@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MainViewController : UIViewController <UITextFieldDelegate>
+#import "HelperViewController.h"
+
+@interface MainViewController : UIViewController <UITextFieldDelegate, HelperButtonDelegate>
 - (id) init;
 - (NSString*)evaluate:(NSString*)expr;
+- (void)handleButton:(ButtonType)buttonType;
 @end

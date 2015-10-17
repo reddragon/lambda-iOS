@@ -8,6 +8,24 @@
 
 #import <UIKit/UIKit.h>
 
+typedef enum ButtonType {
+    kOpenBracket,
+    kClosedBracket,
+    kAdd,
+    kSubtract,
+    kMultiply,
+    kDivide,
+    kDefvar,
+    kDefun,
+    kRepeat
+} ButtonType;
+
+@protocol HelperButtonDelegate <NSObject>
+
+- (void)handleButton:(ButtonType)buttonType;
+
+@end
+
 @interface HelperViewController : UIViewController
-- (id)initWithDelegate;
+- (id)initWithDelegate:(id<HelperButtonDelegate>)delegate;
 @end
