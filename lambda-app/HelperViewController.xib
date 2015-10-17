@@ -7,8 +7,16 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HelperViewController">
             <connections>
+                <outlet property="closedBracketButton" destination="ocI-yh-tKh" id="cwL-Ch-zSe"/>
+                <outlet property="defunButton" destination="VWX-jX-qOe" id="DOk-dv-rTj"/>
+                <outlet property="defvarButton" destination="pyQ-Gq-4O1" id="Dg2-t0-CkW"/>
+                <outlet property="divideButton" destination="5Ev-lo-qOD" id="xKp-8B-N2C"/>
                 <outlet property="firstViewLeftGap" destination="XCA-jg-OCY" id="OeF-S2-XA7"/>
-                <outlet property="openBracketButton" destination="xkP-WQ-A0i" id="bpG-vS-eUI"/>
+                <outlet property="minusButton" destination="f0O-rg-3sk" id="Nc9-tD-tGL"/>
+                <outlet property="multiplyButton" destination="50s-eQ-nyj" id="aEw-LE-Y54"/>
+                <outlet property="openBracketButton" destination="ocI-yh-tKh" id="cGG-eC-s5r"/>
+                <outlet property="plusButton" destination="Kfg-8b-omg" id="Afl-Fp-1qJ"/>
+                <outlet property="repeatButton" destination="5nw-g8-Jay" id="c7w-uZ-hyA"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
