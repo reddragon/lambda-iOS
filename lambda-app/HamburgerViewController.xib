@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8191"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HamburgerViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EpV-WL-RKo">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <color key="backgroundColor" red="0.95669244259999997" green="0.39488305620000003" blue="0.4444278941" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="EpV-WL-RKo" secondAttribute="bottom" id="Ccp-NK-Ks0"/>
+                <constraint firstAttribute="trailing" secondItem="EpV-WL-RKo" secondAttribute="trailing" id="HP3-1f-eM7"/>
+                <constraint firstItem="EpV-WL-RKo" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="MMd-ON-16H"/>
+                <constraint firstItem="EpV-WL-RKo" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="WeN-xy-QtY"/>
+            </constraints>
+            <point key="canvasLocation" x="360" y="207"/>
+        </view>
+    </objects>
+</document>

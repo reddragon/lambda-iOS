@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 
 #import "MainViewController.h"
+#import "ContainerViewController.h"
 
 @interface AppDelegate ()
 
@@ -21,9 +22,9 @@
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    MainViewController* mvc = [[MainViewController alloc] init];
-    UINavigationController* nvc = [[UINavigationController alloc] initWithRootViewController:mvc];
-    self.window.rootViewController = nvc;
+    ContainerViewController* cvc = [[ContainerViewController alloc] init];
+    //UINavigationController* nvc = [[UINavigationController alloc] initWithRootViewController:cvc];
+    self.window.rootViewController = cvc;
     [self.window makeKeyAndVisible];
     
     /*

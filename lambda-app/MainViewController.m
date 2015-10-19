@@ -10,6 +10,7 @@
 
 #import "lang/Lang.h"
 
+#import "HamburgerViewController.h"
 #import "HelperViewController.h"
 
 @interface MainViewController ()
@@ -20,16 +21,25 @@
 @property NSOperationQueue* evalQueue;
 @property GoLangLangEnv* env;
 @property (strong, nonatomic) HelperViewController *helperVC;
+@property (strong, nonatomic) HamburgerViewController *hamburgerVC;
+@property (strong, nonatomic) IBOutlet UIView *helperView;
 @property (strong, nonatomic) NSString *prevString;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *helperViewBottomConstraint;
+- (IBAction)hamburgerButton:(id)sender;
 @end
 
 @implementation MainViewController
+
+- (IBAction)hamburgerButton:(id)sender {
+    NSLog(@"Button pressed");
+}
 
 - (id)init {
     self = [super init];
     self.env = GoLangNewEnv();
     self.helperVC = [[HelperViewController alloc] initWithDelegate:self];
-    [self addChildViewController:self.helperVC];
+    self.hamburgerVC = [[HamburgerViewController alloc] init];
+    //[self.view addSubview:self.hamburgerVC.view];
     return self;
 }
 
@@ -104,8 +114,21 @@
 - (void)adjustViewForKeyboard:(NSNotification*) notification {
     NSDictionary* userInfo = [notification userInfo];
     CGRect rect = [userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
-    self.bottomPaddingConstraint.constant = CGRectGetMaxY(self.view.bounds) - CGRectGetMinY(rect) + self.initialPaddingConstant;
-
+    //self.bottomPaddingConstraint.constant = CGRectGetMaxY(self.view.bounds) - CGRectGetMinY(rect) + self.initialPaddingConstant;
+    
+    NSLog(@"Constant before: %f %f", self.helperViewBottomConstraint.constant, CGRectGetMinY(rect));
+    double delta = CGRectGetMaxY(self.view.bounds) - CGRectGetMinY(rect);
+    if (delta > 0) {
+        self.helperViewBottomConstraint.constant = delta;
+    } else {
+        self.helperViewBottomConstraint.constant = self.initialPaddingConstant;
+    }
+    NSLog(@"Constant after: %f", self.helperViewBottomConstraint.constant);
+    
+    double duration = [userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    [UIView animateWithDuration:duration delay:0.0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+        [self.view layoutIfNeeded];
+    } completion:nil];
     // double duration = [userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
     
 }
@@ -117,7 +140,8 @@
     self.contentScreen.layer.cornerRadius = 5;
     self.contentScreen.layer.masksToBounds = YES;
     self.inputField.clearButtonMode = UITextFieldViewModeWhileEditing;
-    self.initialPaddingConstant = self.bottomPaddingConstraint.constant;
+    // self.initialPaddingConstant = self.bottomPaddingConstraint.constant;
+    self.initialPaddingConstant = self.helperViewBottomConstraint.constant;
     
     self.inputField.delegate = self;
     [self.view addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self.view action:@selector(endEditing:)]];
@@ -131,6 +155,19 @@
     self.contentScreen.layoutManager.allowsNonContiguousLayout = NO;
     
     self.evalQueue = [[NSOperationQueue alloc] init];
+    
+    NSLog(@"HelperView: %f %f", self.helperView.frame.origin.x, self.helperView.frame.origin.y);
+    //self.helperView.translatesAutoresizingMaskIntoConstraints = YES;
+    
+    CGRect frame = self.view.bounds;
+    frame.origin.x = 0;
+    frame.size.width = frame.size.width - 100;
+    
+    /*
+    self.hamburgerVC.view.frame = frame;
+    self.hamburgerVC.view.bounds = frame;
+    [self.view addSubview:self.hamburgerVC.view];
+    */
 }
 
 - (NSString*)evaluate:(NSString*)expr {
@@ -155,22 +192,12 @@
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
     NSLog(@"Began editing");
-    // UIView* hview = [[KeyboardHelperView alloc] initView:self.view];
-    [textField setInputAccessoryView:self.helperVC.view];
-    // [textField setInputAccessoryView:[[UIView alloc] initWithFrame:CGRectMake(10.0, 0.0, 310.0, 40.0)]];
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     NSLog(@"Ended editing");
 }
 
-- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
-    NSLog(@"Should edit: %@, range loc: %lu, len: %lu.", string, (unsigned long)range.location, (unsigned long)range.length);
-    NSLog(@"Keyboard type: %ld", (long)textField.keyboardType);
-    [textField resignFirstResponder];
-    [textField becomeFirstResponder];
-    return YES;
-}
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     NSLog(@"Input: %@", self.inputField.text);
@@ -189,6 +216,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewDidLayoutSubviews {
+    NSLog(@"Did layout subviews");
+}
+
 /*
 #pragma mark - Navigation
 
@@ -198,5 +229,4 @@
     // Pass the selected object to the new view controller.
 }
 */
-
 @end

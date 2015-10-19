@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C60E44911BD464C200014033 /* HamburgerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C60E448F1BD464C200014033 /* HamburgerViewController.m */; settings = {ASSET_TAGS = (); }; };
+		C60E44921BD464C200014033 /* HamburgerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C60E44901BD464C200014033 /* HamburgerViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		C60E44961BD478D300014033 /* ContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C60E44941BD478D200014033 /* ContainerViewController.m */; settings = {ASSET_TAGS = (); }; };
+		C60E44971BD478D300014033 /* ContainerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C60E44951BD478D300014033 /* ContainerViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		C66E5C8E1BC1F2BE008BFE59 /* Icon-60.png in Resources */ = {isa = PBXBuildFile; fileRef = C66E5C7C1BC1F2BE008BFE59 /* Icon-60.png */; settings = {ASSET_TAGS = (); }; };
 		C66E5C8F1BC1F2BE008BFE59 /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C66E5C7D1BC1F2BE008BFE59 /* Icon-60@2x.png */; settings = {ASSET_TAGS = (); }; };
 		C66E5C901BC1F2BE008BFE59 /* Icon-60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C66E5C7E1BC1F2BE008BFE59 /* Icon-60@3x.png */; settings = {ASSET_TAGS = (); }; };
@@ -48,6 +52,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C60E448E1BD464C200014033 /* HamburgerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HamburgerViewController.h; sourceTree = "<group>"; };
+		C60E448F1BD464C200014033 /* HamburgerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HamburgerViewController.m; sourceTree = "<group>"; };
+		C60E44901BD464C200014033 /* HamburgerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HamburgerViewController.xib; sourceTree = "<group>"; };
+		C60E44931BD478D200014033 /* ContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContainerViewController.h; sourceTree = "<group>"; };
+		C60E44941BD478D200014033 /* ContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContainerViewController.m; sourceTree = "<group>"; };
+		C60E44951BD478D300014033 /* ContainerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContainerViewController.xib; sourceTree = "<group>"; };
 		C66E5C7C1BC1F2BE008BFE59 /* Icon-60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60.png"; sourceTree = "<group>"; };
 		C66E5C7D1BC1F2BE008BFE59 /* Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60@2x.png"; sourceTree = "<group>"; };
 		C66E5C7E1BC1F2BE008BFE59 /* Icon-60@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60@3x.png"; sourceTree = "<group>"; };
@@ -170,6 +180,12 @@
 				C6942EF41BCE2BAD00176870 /* HelperViewController.h */,
 				C6942EF51BCE2BAD00176870 /* HelperViewController.m */,
 				C6942EF61BCE2BAD00176870 /* HelperViewController.xib */,
+				C60E448E1BD464C200014033 /* HamburgerViewController.h */,
+				C60E448F1BD464C200014033 /* HamburgerViewController.m */,
+				C60E44901BD464C200014033 /* HamburgerViewController.xib */,
+				C60E44931BD478D200014033 /* ContainerViewController.h */,
+				C60E44941BD478D200014033 /* ContainerViewController.m */,
+				C60E44951BD478D300014033 /* ContainerViewController.xib */,
 			);
 			name = "lamda-app";
 			path = "lambda-app";
@@ -294,8 +310,10 @@
 				C66E5C921BC1F2BE008BFE59 /* Icon-72@2x.png in Resources */,
 				C66E5C8F1BC1F2BE008BFE59 /* Icon-60@2x.png in Resources */,
 				C66E5C9E1BC1F2BE008BFE59 /* Icon@2x.png in Resources */,
+				C60E44921BD464C200014033 /* HamburgerViewController.xib in Resources */,
 				C6C301221B938FFA007A7E3C /* MainViewController.xib in Resources */,
 				C66E5C9D1BC1F2BE008BFE59 /* Icon.png in Resources */,
+				C60E44971BD478D300014033 /* ContainerViewController.xib in Resources */,
 				C66E5C8E1BC1F2BE008BFE59 /* Icon-60.png in Resources */,
 				C66E5C971BC1F2BE008BFE59 /* Icon-Small-40@3x.png in Resources */,
 				C66E5C9C1BC1F2BE008BFE59 /* Icon-Small@3x.png in Resources */,
@@ -324,8 +342,10 @@
 			files = (
 				C6C300F31B92FD19007A7E3C /* AppDelegate.m in Sources */,
 				C6942EF71BCE2BAD00176870 /* HelperViewController.m in Sources */,
+				C60E44961BD478D300014033 /* ContainerViewController.m in Sources */,
 				C6C301211B938FFA007A7E3C /* MainViewController.m in Sources */,
 				C6C300F01B92FD19007A7E3C /* main.m in Sources */,
+				C60E44911BD464C200014033 /* HamburgerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

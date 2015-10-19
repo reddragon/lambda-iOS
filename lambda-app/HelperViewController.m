@@ -64,6 +64,7 @@
 
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
+    /*
     NSUInteger numViews = self.view.subviews.count;
     if (numViews > 0) {
         // NSLog(@"Width: %f", self.view.frame.size.width);
@@ -89,13 +90,17 @@
         }
         
         //[self.view layoutIfNeeded];
-    }
+    }*/
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.view becomeFirstResponder];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    NSLog(@"Setting up the buttons");
     [self setupButtonDefaults:self.openBracketButton buttonType:kOpenBracket];
     [self setupButtonDefaults:self.closedBracketButton buttonType:kClosedBracket];
     [self setupButtonDefaults:self.plusButton buttonType:kAdd];
