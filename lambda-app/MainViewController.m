@@ -25,6 +25,8 @@
 @property (strong, nonatomic) IBOutlet UIView *helperView;
 @property (strong, nonatomic) NSString *prevString;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *helperViewBottomConstraint;
+
+@property (strong, nonatomic) id<HamburgerMenuDelegate> delegate;
 - (IBAction)hamburgerButton:(id)sender;
 @end
 
@@ -32,14 +34,18 @@
 
 - (IBAction)hamburgerButton:(id)sender {
     NSLog(@"Button pressed");
+    if (self.delegate != nil) {
+        [self.delegate toggleMenu];
+    }
 }
 
-- (id)init {
+- (id)initWithDelegate:(id<HamburgerMenuDelegate>)delegate {
     self = [super init];
     self.env = GoLangNewEnv();
     self.helperVC = [[HelperViewController alloc] initWithDelegate:self];
     self.hamburgerVC = [[HamburgerViewController alloc] init];
     //[self.view addSubview:self.hamburgerVC.view];
+    self.delegate = delegate;
     return self;
 }
 

@@ -28,9 +28,9 @@
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iDT-cH-mWi">
+                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iDT-cH-mWi">
                             <rect key="frame" x="10" y="20" width="46" height="30"/>
-                            <state key="normal" title="Button"/>
+                            <state key="normal" title="Menu"/>
                             <connections>
                                 <action selector="hamburgerButton:" destination="-1" eventType="touchUpInside" id="Qpz-Wh-LJj"/>
                             </connections>

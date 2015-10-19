@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ContainerViewController : UIViewController
+#import "MainViewController.h"
 
+@interface ContainerViewController : UIViewController<HamburgerMenuDelegate>
+- (void)toggleMenu;
 @end

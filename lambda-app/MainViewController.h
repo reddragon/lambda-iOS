@@ -10,8 +10,13 @@
 
 #import "HelperViewController.h"
 
+
+@protocol HamburgerMenuDelegate <NSObject>
+- (void)toggleMenu;
+@end
+
 @interface MainViewController : UIViewController <UITextFieldDelegate, HelperButtonDelegate>
-- (id) init;
+- (id)initWithDelegate:(id<HamburgerMenuDelegate>)delegate;
 - (NSString*)evaluate:(NSString*)expr;
 - (void)handleButton:(ButtonType)buttonType;
 @end

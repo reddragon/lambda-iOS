@@ -17,17 +17,34 @@
 
 @implementation ContainerViewController
 
+- (void)toggleMenu {
+    NSLog(@"Should toggle the menu now.");
+    CGRect frame = self.mainVC.view.frame;
+    // NSLog(@"Frame: %f %f", se)
+    if (frame.origin.x > 0) {
+        NSLog(@"It was opened up.");
+        frame.origin.x = 0;
+    } else {
+        NSLog(@"It was closed.");
+        frame.origin.x = 100;
+    }
+    [self.mainVC.view endEditing:YES];
+    [UIView animateWithDuration:0.1 animations:^{
+        self.mainVC.view.frame = frame;
+    }];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.mainVC = [[MainViewController alloc] init];
+    self.mainVC = [[MainViewController alloc] initWithDelegate:self];
     
     CGRect frame = self.containerView.bounds;
-    // CGRect frame2 = frame;
-    frame.origin.x = -100;
+    CGRect frame2 = frame;
+    frame.origin.x = 100;
     //frame.size.width = 100;
     frame.size.height = self.containerView.bounds.size.height;
-    self.containerView.frame = frame;
-    self.containerView.bounds = frame;
+    self.mainVC.view.frame = frame;
+    self.mainVC.view.bounds = frame2;
     
     [self.containerView addSubview:self.mainVC.view];
     
