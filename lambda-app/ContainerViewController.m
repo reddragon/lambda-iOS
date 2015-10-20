@@ -8,8 +8,10 @@
 
 #import "ContainerViewController.h"
 #import "MainViewController.h"
+#import "HamburgerViewController.h"
 
 @interface ContainerViewController ()
+@property (strong, nonatomic) HamburgerViewController *hamburgerVC;
 @property (strong, nonatomic) MainViewController* mainVC;
 @property (strong, nonatomic) IBOutlet UIView *containerView;
 
@@ -19,34 +21,45 @@
 
 - (void)toggleMenu {
     NSLog(@"Should toggle the menu now.");
-    CGRect frame = self.mainVC.view.frame;
+    CGRect mainVCFrame = self.mainVC.view.frame;
+    CGRect hamburgerVCFrame = self.hamburgerVC.view.frame;
     // NSLog(@"Frame: %f %f", se)
-    if (frame.origin.x > 0) {
+    if (mainVCFrame.origin.x > 0) {
         NSLog(@"It was opened up.");
-        frame.origin.x = 0;
+        mainVCFrame.origin.x = 0;
+        hamburgerVCFrame.origin.x = -hamburgerVCFrame.size.width;
     } else {
         NSLog(@"It was closed.");
-        frame.origin.x = 100;
+        hamburgerVCFrame.origin.x = 0;
+        mainVCFrame.origin.x = hamburgerVCFrame.size.width;
     }
     [self.mainVC.view endEditing:YES];
     [UIView animateWithDuration:0.1 animations:^{
-        self.mainVC.view.frame = frame;
+        self.mainVC.view.frame = mainVCFrame;
     }];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.hamburgerVC = [[HamburgerViewController alloc] init];
     self.mainVC = [[MainViewController alloc] initWithDelegate:self];
     
     CGRect frame = self.containerView.bounds;
-    CGRect frame2 = frame;
-    frame.origin.x = 100;
-    //frame.size.width = 100;
-    frame.size.height = self.containerView.bounds.size.height;
-    self.mainVC.view.frame = frame;
-    self.mainVC.view.bounds = frame2;
+    
+    int widthSqueeze = 150;
+    CGRect hamburgerVCFrame = frame;
+    hamburgerVCFrame.size.width = frame.size.width - widthSqueeze;
+    hamburgerVCFrame.origin.x = 0;
+    self.hamburgerVC.view.frame = hamburgerVCFrame;
+    self.hamburgerVC.view.bounds = hamburgerVCFrame;
+
+    CGRect mainVCFrame = self.containerView.bounds;
+    mainVCFrame.origin.x = hamburgerVCFrame.size.width + 40;
+    self.mainVC.view.frame = mainVCFrame;
+    self.mainVC.view.bounds = frame;
     
     [self.containerView addSubview:self.mainVC.view];
+    [self.containerView addSubview:self.hamburgerVC.view];
     
     // Do any additional setup after loading the view from its nib.
 }
