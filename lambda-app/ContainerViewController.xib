@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8191"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9059"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ContainerViewController">
             <connections>
                 <outlet property="containerView" destination="Yto-0E-gvh" id="PQ2-HE-YsL"/>
+                <outlet property="rightView" destination="mgb-Ah-vb5" id="7IG-kB-GXJ"/>
+                <outlet property="sideView" destination="3DN-oW-leD" id="JxY-dz-8bv"/>
+                <outlet property="sideViewLeading" destination="aMf-bJ-K87" id="AAc-UW-fJn"/>
+                <outlet property="sideViewWidth" destination="ahu-xz-t2I" id="pOb-5s-TLK"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,7 +22,29 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yto-0E-gvh">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3DN-oW-leD">
+                            <rect key="frame" x="0.0" y="0.0" width="150" height="568"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="150" id="ahu-xz-t2I"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mgb-Ah-vb5">
+                            <rect key="frame" x="150" y="0.0" width="170" height="568"/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                    </subviews>
                     <color key="backgroundColor" red="0.72846748579999998" green="0.6268498374" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="3DN-oW-leD" secondAttribute="bottom" id="7cF-Wx-OCA"/>
+                        <constraint firstAttribute="bottom" secondItem="mgb-Ah-vb5" secondAttribute="bottom" id="8LE-8i-JeP"/>
+                        <constraint firstItem="3DN-oW-leD" firstAttribute="top" secondItem="Yto-0E-gvh" secondAttribute="top" id="9uP-Jg-jOq"/>
+                        <constraint firstItem="mgb-Ah-vb5" firstAttribute="leading" secondItem="3DN-oW-leD" secondAttribute="trailing" id="IHb-Sa-ZqU"/>
+                        <constraint firstItem="3DN-oW-leD" firstAttribute="leading" secondItem="Yto-0E-gvh" secondAttribute="leading" id="aMf-bJ-K87"/>
+                        <constraint firstItem="mgb-Ah-vb5" firstAttribute="top" secondItem="Yto-0E-gvh" secondAttribute="top" id="bgg-OJ-pbp"/>
+                        <constraint firstAttribute="trailing" secondItem="mgb-Ah-vb5" secondAttribute="trailing" id="oY7-iU-eUf"/>
+                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

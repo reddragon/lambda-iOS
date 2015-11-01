@@ -109,12 +109,12 @@
 
 - (void)keyboardWillShow:(NSNotification*) notification {
     NSLog(@"KeyboardWillShow");
-    [self adjustViewForKeyboard:notification];
+    //[self adjustViewForKeyboard:notification];
 }
 
 - (void)keyboardWillHide:(NSNotification*) notification {
     NSLog(@"KeyboardWillHide");
-    [self adjustViewForKeyboard:notification];
+    //[self adjustViewForKeyboard:notification];
 }
 
 - (void)adjustViewForKeyboard:(NSNotification*) notification {

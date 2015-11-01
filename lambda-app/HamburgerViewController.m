@@ -9,6 +9,7 @@
 #import "HamburgerViewController.h"
 
 @interface HamburgerViewController ()
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *hamburgerViewWidth;
 
 @end
 

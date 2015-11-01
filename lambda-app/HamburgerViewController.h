@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface HamburgerViewController : UIViewController
-
+@property (strong, nonatomic) IBOutlet UIView *hamburgerContainerView;
 @end
