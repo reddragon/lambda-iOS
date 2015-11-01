@@ -33,14 +33,19 @@
 }
 
 - (void)toggleMenu {
-    NSLog(@"Should toggle the menu now., %f", self.sideViewLeading.constant);
-    [UIView animateWithDuration:1.0 animations:^{
-        if (self.sideViewWidth.constant == 150) {
-            self.sideViewWidth.constant = 0;
-        } else {
-            self.sideViewWidth.constant = 150;
-        }
+    //NSLog(@"Should toggle the menu now., %f", self.sideViewLeading.constant);
+    
+    if (self.sideViewWidth.constant == 150) {
+        self.sideViewWidth.constant = 0;
+    } else {
+        self.sideViewWidth.constant = 150;
+    }
+    [UIView animateWithDuration:0.15 animations:^{
+        [self.view layoutIfNeeded];
+    } completion:^(BOOL finished) {
+        NSLog(@"Right Side View width: %f", self.rightView.frame.size.width);
     }];
+    
     /*
     CGRect mainVCFrame = self.mainVC.view.frame;
     CGRect hamburgerVCFrame = self.hamburgerVC.view.frame;
@@ -71,7 +76,9 @@
     //self.hamburgerVC.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     self.hamburgerVC.view.frame = CGRectMake(0, 0, self.sideView.frame.size.width, self.sideView.frame.size.height);
     
+    self.mainVC.view.frame = CGRectMake(0, 0, self.rightView.frame.size.width, self.rightView.frame.size.height);
     self.mainVC.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    
     [self.sideView addSubview:self.hamburgerVC.view];
     [self.rightView addSubview:self.mainVC.view];
     self.sideView.autoresizesSubviews = YES;
