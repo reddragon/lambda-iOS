@@ -21,7 +21,6 @@
 @property NSOperationQueue* evalQueue;
 @property GoLangLangEnv* env;
 @property (strong, nonatomic) HelperViewController *helperVC;
-@property (strong, nonatomic) HamburgerViewController *hamburgerVC;
 @property (strong, nonatomic) IBOutlet UIView *helperView;
 @property (strong, nonatomic) NSString *prevString;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *helperViewBottomConstraint;
@@ -43,7 +42,6 @@
     self = [super init];
     self.env = GoLangNewEnv();
     self.helperVC = [[HelperViewController alloc] initWithDelegate:self];
-    self.hamburgerVC = [[HamburgerViewController alloc] init];
     //[self.view addSubview:self.hamburgerVC.view];
     self.delegate = delegate;
     return self;
@@ -109,12 +107,12 @@
 
 - (void)keyboardWillShow:(NSNotification*) notification {
     NSLog(@"KeyboardWillShow");
-    //[self adjustViewForKeyboard:notification];
+    [self adjustViewForKeyboard:notification];
 }
 
 - (void)keyboardWillHide:(NSNotification*) notification {
     NSLog(@"KeyboardWillHide");
-    //[self adjustViewForKeyboard:notification];
+    [self adjustViewForKeyboard:notification];
 }
 
 - (void)adjustViewForKeyboard:(NSNotification*) notification {
@@ -122,7 +120,7 @@
     CGRect rect = [userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
     //self.bottomPaddingConstraint.constant = CGRectGetMaxY(self.view.bounds) - CGRectGetMinY(rect) + self.initialPaddingConstant;
     
-    NSLog(@"Constant before: %f %f", self.helperViewBottomConstraint.constant, CGRectGetMinY(rect));
+    NSLog(@"Constant before: %f %f %f", self.helperViewBottomConstraint.constant, CGRectGetMinY(rect), CGRectGetMaxY(self.view.bounds));
     double delta = CGRectGetMaxY(self.view.bounds) - CGRectGetMinY(rect);
     if (delta > 0) {
         self.helperViewBottomConstraint.constant = delta;
@@ -152,7 +150,7 @@
     self.inputField.delegate = self;
     [self.view addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self.view action:@selector(endEditing:)]];
     
-    [self.inputField becomeFirstResponder];
+    //[self.inputField becomeFirstResponder];
     
     self.contentScreen.text = @"> ";
     self.contentScreen.userInteractionEnabled = YES;
