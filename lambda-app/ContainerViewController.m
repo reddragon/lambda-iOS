@@ -34,7 +34,7 @@
 
 - (void)toggleMenu {
     //NSLog(@"Should toggle the menu now., %f", self.sideViewLeading.constant);
-    
+    [self.mainVC dismissKeyboard];
     if (self.sideViewWidth.constant == 150) {
         self.sideViewWidth.constant = 0;
     } else {
@@ -45,30 +45,9 @@
     } completion:^(BOOL finished) {
         NSLog(@"Right Side View width: %f", self.rightView.frame.size.width);
     }];
-    
-    /*
-    CGRect mainVCFrame = self.mainVC.view.frame;
-    CGRect hamburgerVCFrame = self.hamburgerVC.view.frame;
-    // NSLog(@"Frame: %f %f", se)
-    if (mainVCFrame.origin.x > 0) {
-        NSLog(@"It was opened up.");
-        mainVCFrame.origin.x = 0;
-        hamburgerVCFrame.origin.x = -hamburgerVCFrame.size.width;
-    } else {
-        NSLog(@"It was closed.");
-        hamburgerVCFrame.origin.x = 0;
-        mainVCFrame.origin.x = hamburgerVCFrame.size.width;
-    }
-    [self.mainVC.view endEditing:YES];
-    [UIView animateWithDuration:0.1 animations:^{
-        self.mainVC.view.frame = mainVCFrame;
-    }];
-    */
 }
 
 - (void)viewWillLayoutSubviews {
-    
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated {

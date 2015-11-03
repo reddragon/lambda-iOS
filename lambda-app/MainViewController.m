@@ -104,6 +104,9 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
 }
 
+- (void)dismissKeyboard {
+    [self.inputField endEditing:YES];
+}
 
 - (void)keyboardWillShow:(NSNotification*) notification {
     NSLog(@"KeyboardWillShow");
@@ -118,7 +121,6 @@
 - (void)adjustViewForKeyboard:(NSNotification*) notification {
     NSDictionary* userInfo = [notification userInfo];
     CGRect rect = [userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
-    //self.bottomPaddingConstraint.constant = CGRectGetMaxY(self.view.bounds) - CGRectGetMinY(rect) + self.initialPaddingConstant;
     
     NSLog(@"Constant before: %f %f %f", self.helperViewBottomConstraint.constant, CGRectGetMinY(rect), CGRectGetMaxY(self.view.bounds));
     double delta = CGRectGetMaxY(self.view.bounds) - CGRectGetMinY(rect);
@@ -133,8 +135,6 @@
     [UIView animateWithDuration:duration delay:0.0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
         [self.view layoutIfNeeded];
     } completion:nil];
-    // double duration = [userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
-    
 }
 
 

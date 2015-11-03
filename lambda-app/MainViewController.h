@@ -19,4 +19,5 @@
 - (id)initWithDelegate:(id<HamburgerMenuDelegate>)delegate;
 - (NSString*)evaluate:(NSString*)expr;
 - (void)handleButton:(ButtonType)buttonType;
+- (void)dismissKeyboard;
 @end
