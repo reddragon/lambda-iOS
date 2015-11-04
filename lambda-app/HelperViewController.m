@@ -64,7 +64,7 @@
 
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
-    /*
+    
     NSUInteger numViews = self.view.subviews.count;
     if (numViews > 0) {
         // NSLog(@"Width: %f", self.view.frame.size.width);
@@ -80,17 +80,17 @@
                 lastView = curView;
             }
         }
-        float gap = self.view.frame.size.width - maxX;
+        float gap = self.view.superview.frame.size.width - maxX;
         NSLog(@"Gap: %f", gap);
         if ((gap - self.firstViewLeftGap.constant) > 1) {
             float addToLeft = (gap - self.firstViewLeftGap.constant) / 2;
-            self.firstViewLeftGap.constant += addToLeft;
+            self.firstViewLeftGap.constant = addToLeft;
             NSLog(@"Added %f", addToLeft);
             // [self.view layoutIfNeeded];
         }
         
         //[self.view layoutIfNeeded];
-    }*/
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
