@@ -23,7 +23,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lambda" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ruk-M3-ACk">
-                            <rect key="frame" x="130" y="23" width="59.5" height="24"/>
+                            <rect key="frame" x="130" y="23" width="60" height="24"/>
                             <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="21"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
