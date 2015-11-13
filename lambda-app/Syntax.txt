@@ -50,6 +50,9 @@ For example this expression `(+ 1 2)` adds 1 and 2.
 `> (or false false)`
 `false`
 
+`(cond (true 1) (false 2))`
+`1`
+
 `> (cond ((> 1 2) true) ((< 1 2) false)`
 `false`
 

@@ -39,20 +39,13 @@
     
     if (content != nil) {
         NSAttributedString *string = [parser attributedStringFromMarkdownString:content];
-        [self.textBox setScrollEnabled:NO];
         [self.textBox setAttributedText:string];
-        
-        [self.textBox scrollRectToVisible:CGRectMake(0,0,0,0) animated:NO];
-        [self.textBox setScrollEnabled:YES];
     }
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
-    
-    //[self.textBox scrollRangeToVisible:];
 }
 
 - (void)didReceiveMemoryWarning {
