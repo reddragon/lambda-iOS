@@ -10,12 +10,13 @@ For example this expression `(+ 1 2)` adds 1 and 2.
 `> (+ 1 2)`
 `3`
 
-`> (- (/ (* (+ 1 2) 3) 3) 2)`
-`1`
-
 `> (/ 22 7.0)`
 `3.142857142857143`
 
+You can also nest expressions in parantheses.
+
+`> (- (/ (* (+ 1 2) 3) 3) 2)`
+`1`
 
 
 ### Define variables with defvar
@@ -28,9 +29,6 @@ For example this expression `(+ 1 2)` adds 1 and 2.
 
 `> (* pi (* r r))`
 `314.159265359`
-
-`> (/ 1 0)`
-`Error: Divide by zero`
 
 
 ### Comparison Operators (>, <, =, >=, <=)
@@ -64,8 +62,16 @@ The defun operator takes in the name, followed by a list of parameters enclosed 
 `> (defun add-sq (x y) (+ (* x x) (* y y)))`
 `<Method: add-sq>`
 
+Once you have defined the method, it can be used like any other operator.
+
 `> (add-sq 3 4)`
 `25`
+
+Lets implement the factorial function. The `cond` operator is defining how to recurse.
+
+We first evaluate if `(= x 0)` is true. If that's the case, we return 1.
+
+Otherwise, we evaluate the second expression, which is true. where we recurse by returning `(x * fact(x - 1))`.
 
 `> (defun fact (x) (cond ((= x 0) 1) (true (* x (fact (- x 1))))))`
 `<Method: fact>`
