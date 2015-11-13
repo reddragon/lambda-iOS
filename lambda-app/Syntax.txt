@@ -1,0 +1,71 @@
+## Introduction
+
+lambda is a dialect of LISP, which is a very easy and yet powerful language. LISP is based on something called 's-expressions', which is nothing but an expression of the format `(operator operand1 operand2 ...)`. 
+
+For example this expression `(+ 1 2)` adds 1 and 2.
+
+
+### Working with +, -, *, /
+
+`> (+ 1 2)`
+`3`
+
+`> (- (/ (* (+ 1 2) 3) 3) 2)`
+`1`
+
+`> (/ 22 7.0)`
+`3.142857142857143`
+
+
+
+### Define variables with defvar
+
+`> (defvar pi 3.14159265359)`
+`3.14159265359`
+
+`> (defvar r 10)`
+`10`
+
+`> (* pi (* r r))`
+`314.159265359`
+
+`> (/ 1 0)`
+`Error: Divide by zero`
+
+
+### Comparison Operators (>, <, =, >=, <=)
+
+`(> 2 3)`
+`true`
+
+`(= 1 1)`
+`true`
+
+
+### Logical and Conditional operators
+
+`> (and true true)`
+`true`
+
+`> (or false false)`
+`false`
+
+`> (cond ((> 1 2) true) ((< 1 2) false)`
+`false`
+
+
+### Define methods with defun
+
+The defun operator takes in the name, followed by a list of parameters enclosed in parantheses, and finally followed by the expression to evaluate.
+
+`> (defun add-sq (x y) (+ (* x x) (* y y)))`
+`<Method: add-sq>`
+
+`> (add-sq 3 4)`
+`25`
+
+`> (defun fact (x) (cond ((= x 0) 1) (true (* x (fact (- x 1))))))`
+`<Method: fact>`
+
+`> (fact 10)`
+`3628800`
