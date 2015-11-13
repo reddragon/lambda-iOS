@@ -12,20 +12,14 @@
 @interface HamburgerViewController ()
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *hamburgerViewWidth;
 @property (strong, nonatomic) HelpViewController *hvc;
-@property (strong, nonatomic) UINavigationController *nvc;
 @end
 
 @implementation HamburgerViewController
 
-- (void)dismissHelpVC {
-    NSLog(@"dismissHelpVC called");
-    [self.nvc dismissViewControllerAnimated:NO completion:nil];
-}
-
 - (IBAction)pushHelpButton:(id)sender {
     NSLog(@"Help button pushed.");
     
-    [self.view.window.rootViewController presentViewController:self.nvc animated:NO completion:^{
+    [self.view.window.rootViewController presentViewController:self.hvc animated:NO completion:^{
         NSLog(@"Done");
     }];
 }
@@ -37,12 +31,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.hvc = [[HelpViewController alloc] init];
-    [self.hvc setTitle:@"Help"];
-    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"Done"
-                                                                    style:UIBarButtonItemStyleDone target:self action:@selector(dismissHelpVC)];
-    self.hvc.navigationItem.rightBarButtonItem = rightButton;
-    self.nvc = [[UINavigationController alloc] initWithRootViewController:self.hvc];
-
+    
     // Do any additional setup after loading the view from its nib.
 }
 

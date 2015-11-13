@@ -26,7 +26,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lambda" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aZS-AY-ND6">
-                            <rect key="frame" x="265" y="112" width="71" height="28.5"/>
+                            <rect key="frame" x="265" y="112" width="71" height="29"/>
                             <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="25"/>
                             <color key="textColor" red="0.5419918879024066" green="0.76909450046555439" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>

@@ -9,14 +9,22 @@
 #import "HelpViewController.h"
 
 @interface HelpViewController ()
+@property (strong, nonatomic) IBOutlet UITextView *textBox;
 
 @end
 
 @implementation HelpViewController
 
+- (IBAction)dismissHelp:(id)sender {
+    [self dismissViewControllerAnimated:NO completion:^{
+        NSLog(@"Dismissing Help VC");
+    }];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    //NSAttributedString
 }
 
 - (void)didReceiveMemoryWarning {

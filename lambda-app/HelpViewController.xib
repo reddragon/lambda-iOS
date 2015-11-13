@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HelpViewController">
             <connections>
+                <outlet property="textBox" destination="BWT-lV-8zo" id="IVO-6T-7lO"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -14,7 +15,62 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" red="0.99162638120000002" green="0.99060576560000002" blue="0.92808653809999997" alpha="1" colorSpace="calibratedRGB"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="He7-Zc-0au">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Help" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vCe-MV-UTe">
+                            <rect key="frame" x="280" y="23" width="40" height="24"/>
+                            <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="21"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8NG-hr-FCL">
+                            <rect key="frame" x="553" y="20" width="37" height="30"/>
+                            <state key="normal" title="Done"/>
+                            <connections>
+                                <action selector="dismissHelp:" destination="-1" eventType="touchUpInside" id="QOx-w4-cgx"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.93738489869999997" green="0.93738489869999997" blue="0.93738489869999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="vCe-MV-UTe" firstAttribute="centerX" secondItem="He7-Zc-0au" secondAttribute="centerX" id="BqX-b5-QIT"/>
+                        <constraint firstAttribute="height" constant="50" id="Bzu-vW-R6F"/>
+                        <constraint firstItem="vCe-MV-UTe" firstAttribute="centerY" secondItem="He7-Zc-0au" secondAttribute="centerY" constant="10" id="ECn-yG-oyz"/>
+                        <constraint firstAttribute="trailing" secondItem="8NG-hr-FCL" secondAttribute="trailing" constant="10" id="wuo-6T-Iee"/>
+                        <constraint firstItem="8NG-hr-FCL" firstAttribute="centerY" secondItem="He7-Zc-0au" secondAttribute="centerY" constant="10" id="yQw-N6-LXF"/>
+                    </constraints>
+                </view>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BWT-lV-8zo">
+                    <rect key="frame" x="8" y="58" width="584" height="287"/>
+                    <color key="backgroundColor" red="1" green="0.9518945671059923" blue="0.93054011377026602" alpha="0.17999999999999999" colorSpace="calibratedRGB"/>
+                    <attributedString key="attributedText">
+                        <fragment content="Syntax">
+                            <attributes>
+                                <font key="NSFont" size="14" name="HelveticaNeue"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="He7-Zc-0au" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="1HV-ow-bZV"/>
+                <constraint firstItem="He7-Zc-0au" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="7lJ-9o-DJX"/>
+                <constraint firstItem="BWT-lV-8zo" firstAttribute="top" secondItem="He7-Zc-0au" secondAttribute="bottom" constant="8" id="HTN-st-7q1"/>
+                <constraint firstAttribute="trailing" secondItem="He7-Zc-0au" secondAttribute="trailing" id="SD8-zD-4oE"/>
+                <constraint firstAttribute="trailing" secondItem="BWT-lV-8zo" secondAttribute="trailing" constant="8" id="XaA-pN-XIQ"/>
+                <constraint firstItem="BWT-lV-8zo" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="jKB-dr-aRP"/>
+                <constraint firstAttribute="bottom" secondItem="BWT-lV-8zo" secondAttribute="bottom" constant="255" id="v8h-nW-E4B"/>
+            </constraints>
         </view>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1CB-WU-Rpa">
+            <rect key="frame" x="0.0" y="0.0" width="37" height="30"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <state key="normal" title="Done"/>
+            <point key="canvasLocation" x="730.5" y="156"/>
+        </button>
     </objects>
 </document>
