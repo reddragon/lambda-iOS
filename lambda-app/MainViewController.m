@@ -24,6 +24,8 @@
 @property (strong, nonatomic) IBOutlet UIView *helperView;
 @property (strong, nonatomic) NSString *prevString;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *helperViewBottomConstraint;
+@property (strong, nonatomic) NSMutableArray *commands;
+@property int goBackCounter;
 
 - (IBAction)hamburgerButton:(id)sender;
 @end
@@ -44,6 +46,8 @@
     self.helperVC = [[HelperViewController alloc] initWithDelegate:self];
     //[self.view addSubview:self.hamburgerVC.view];
     self.delegate = delegate;
+    self.commands = [[NSMutableArray alloc] init];
+    self.goBackCounter = 0;
     return self;
 }
 
@@ -83,8 +87,10 @@
             break;
         
         case kRepeat:
-            if (self.prevString != nil) {
-                self.inputField.text = self.prevString;
+            if (self.commands.count > 0) {
+                self.goBackCounter %= self.commands.count;
+                self.inputField.text = self.commands[self.commands.count - self.goBackCounter - 1];
+                self.goBackCounter += 1;
             }
             break;
             
@@ -205,6 +211,10 @@
     NSString *result = [self evaluate:self.inputField.text];
     self.contentScreen.text = [self.contentScreen.text stringByAppendingString:[NSString stringWithFormat:@"%@\n%@\n\n> ", self.inputField.text, result]];
     self.prevString = self.inputField.text;
+    if (self.commands.count == 0 || !([self.commands[self.commands.count - 1] isEqualToString:self.inputField.text])) {
+        [self.commands addObject:self.inputField.text];
+        self.goBackCounter = 0;
+    }
     self.inputField.text = @"";
     [self scrollTextViewToBottom:self.contentScreen];
 
