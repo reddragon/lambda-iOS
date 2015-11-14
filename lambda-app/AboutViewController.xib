@@ -46,13 +46,13 @@
                     <rect key="frame" x="8" y="58" width="584" height="534"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="λ" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w4O-Oi-NA9">
-                            <rect key="frame" x="269" y="82" width="44.5" height="92"/>
+                            <rect key="frame" x="269" y="83" width="44.5" height="92"/>
                             <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="80"/>
                             <color key="textColor" red="0.73759064226519344" green="0.27109086659056475" blue="0.33318211338160209" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lambda" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sis-zx-uFw">
-                            <rect key="frame" x="258" y="184" width="68" height="27.5"/>
+                            <rect key="frame" x="258" y="185" width="68" height="27.5"/>
                             <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="24"/>
                             <color key="textColor" red="0.73759064230000004" green="0.27109086659999998" blue="0.33318211339999998" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
@@ -63,29 +63,29 @@
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lambda was writen for fun by Gaurav Menghani." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ry-n2-UGR">
-                            <rect key="frame" x="132" y="257" width="320" height="19.5"/>
-                            <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="17"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Developed by Gaurav Menghani" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ry-n2-UGR">
+                            <rect key="frame" x="197" y="258" width="190.5" height="17.5"/>
+                            <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="15"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="github.com/reddragon" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5EK-X7-vYI">
-                            <rect key="frame" x="216" y="366" width="151.5" height="20"/>
-                            <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
+                            <rect key="frame" x="225" y="364" width="133.5" height="17.5"/>
+                            <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="15"/>
                             <color key="textColor" red="0.0" green="0.24445759191253011" blue="0.51659616712707179" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wco-zo-B4M">
-                            <rect key="frame" x="92" y="296" width="400" height="1"/>
+                            <rect key="frame" x="192" y="296" width="200" height="1"/>
                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="1" id="Nfo-YJ-18J"/>
-                                <constraint firstAttribute="width" constant="400" id="rY2-uV-gbp"/>
+                                <constraint firstAttribute="width" constant="200" id="rY2-uV-gbp"/>
                             </constraints>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feedback / Issues / Pull requests welcome at:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ku0-bY-JZZ">
-                            <rect key="frame" x="142" y="337" width="299" height="19.5"/>
-                            <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="17"/>
+                            <rect key="frame" x="160" y="337" width="264" height="17.5"/>
+                            <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="15"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -100,6 +100,8 @@
                         <constraint firstItem="5EK-X7-vYI" firstAttribute="top" secondItem="Ku0-bY-JZZ" secondAttribute="bottom" constant="10" id="F8X-H8-y12"/>
                         <constraint firstItem="Ku0-bY-JZZ" firstAttribute="top" secondItem="wco-zo-B4M" secondAttribute="bottom" constant="40" id="NQZ-v6-Zjq"/>
                         <constraint firstItem="wco-zo-B4M" firstAttribute="top" secondItem="5Ry-n2-UGR" secondAttribute="bottom" constant="20" id="Sqz-e2-LdU"/>
+                        <constraint firstItem="wco-zo-B4M" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="PtE-LY-CgW" secondAttribute="leading" constant="10" id="Thd-8t-0VN"/>
+                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="wco-zo-B4M" secondAttribute="trailing" constant="10" id="Y3a-0b-dGs"/>
                         <constraint firstItem="5Ry-n2-UGR" firstAttribute="top" secondItem="sis-zx-uFw" secondAttribute="bottom" constant="45" id="Zaj-Vp-bSg"/>
                         <constraint firstItem="Ku0-bY-JZZ" firstAttribute="top" secondItem="5Ry-n2-UGR" secondAttribute="bottom" constant="40" id="aLR-Ia-MIZ"/>
                         <constraint firstItem="5EK-X7-vYI" firstAttribute="centerX" secondItem="PtE-LY-CgW" secondAttribute="centerX" id="age-Rw-SbT"/>
@@ -111,6 +113,8 @@
                     </constraints>
                     <variation key="default">
                         <mask key="constraints">
+                            <exclude reference="Thd-8t-0VN"/>
+                            <exclude reference="Y3a-0b-dGs"/>
                             <exclude reference="ewg-Oa-gkM"/>
                             <exclude reference="aLR-Ia-MIZ"/>
                         </mask>
