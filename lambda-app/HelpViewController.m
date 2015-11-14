@@ -35,7 +35,6 @@
     
     NSString* path = [[NSBundle mainBundle] pathForResource:@"Syntax" ofType:@"txt"];
     NSString* content = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:NULL];
-    NSLog(@"%@, %@", path, content);
     
     if (content != nil) {
         NSAttributedString *string = [parser attributedStringFromMarkdownString:content];

@@ -31,6 +31,8 @@
 		C66E5C9E1BC1F2BE008BFE59 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C66E5C8C1BC1F2BE008BFE59 /* Icon@2x.png */; };
 		C66E5C9F1BC1F2BE008BFE59 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C66E5C8D1BC1F2BE008BFE59 /* iTunesArtwork@2x.png */; };
 		C68991BD1BBFE9F30031CEAE /* lang.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C68991BC1BBFE9F30031CEAE /* lang.framework */; };
+		C68C04DF1BF6EC5800B73401 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C68C04DD1BF6EC5800B73401 /* AboutViewController.m */; };
+		C68C04E01BF6EC5800B73401 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C68C04DE1BF6EC5800B73401 /* AboutViewController.xib */; };
 		C6942EF71BCE2BAD00176870 /* HelperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6942EF51BCE2BAD00176870 /* HelperViewController.m */; };
 		C6942EF81BCE2BAD00176870 /* HelperViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6942EF61BCE2BAD00176870 /* HelperViewController.xib */; };
 		C6C0C88B1BF1D52A00B3AE71 /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6C0C8891BF1D52A00B3AE71 /* HelpViewController.m */; };
@@ -84,6 +86,9 @@
 		C66E5C8C1BC1F2BE008BFE59 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		C66E5C8D1BC1F2BE008BFE59 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
 		C68991BC1BBFE9F30031CEAE /* lang.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = lang.framework; path = ../go/src/github.com/reddragon/lambda/lang.framework; sourceTree = "<group>"; };
+		C68C04DC1BF6EC5800B73401 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		C68C04DD1BF6EC5800B73401 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		C68C04DE1BF6EC5800B73401 /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
 		C6942EF41BCE2BAD00176870 /* HelperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelperViewController.h; sourceTree = "<group>"; };
 		C6942EF51BCE2BAD00176870 /* HelperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelperViewController.m; sourceTree = "<group>"; };
 		C6942EF61BCE2BAD00176870 /* HelperViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HelperViewController.xib; sourceTree = "<group>"; };
@@ -214,6 +219,9 @@
 				C6C0C8881BF1D52A00B3AE71 /* HelpViewController.h */,
 				C6C0C8891BF1D52A00B3AE71 /* HelpViewController.m */,
 				C6C0C88A1BF1D52A00B3AE71 /* HelpViewController.xib */,
+				C68C04DC1BF6EC5800B73401 /* AboutViewController.h */,
+				C68C04DD1BF6EC5800B73401 /* AboutViewController.m */,
+				C68C04DE1BF6EC5800B73401 /* AboutViewController.xib */,
 			);
 			name = "lamda-app";
 			path = "lambda-app";
@@ -345,6 +353,7 @@
 				C60E44921BD464C200014033 /* HamburgerViewController.xib in Resources */,
 				C6C301221B938FFA007A7E3C /* MainViewController.xib in Resources */,
 				C66E5C9D1BC1F2BE008BFE59 /* Icon.png in Resources */,
+				C68C04E01BF6EC5800B73401 /* AboutViewController.xib in Resources */,
 				C60E44971BD478D300014033 /* ContainerViewController.xib in Resources */,
 				C66E5C8E1BC1F2BE008BFE59 /* Icon-60.png in Resources */,
 				C66E5C971BC1F2BE008BFE59 /* Icon-Small-40@3x.png in Resources */,
@@ -405,6 +414,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C68C04DF1BF6EC5800B73401 /* AboutViewController.m in Sources */,
 				C6C300F31B92FD19007A7E3C /* AppDelegate.m in Sources */,
 				C6942EF71BCE2BAD00176870 /* HelperViewController.m in Sources */,
 				C60E44961BD478D300014033 /* ContainerViewController.m in Sources */,

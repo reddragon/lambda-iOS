@@ -8,10 +8,12 @@
 
 #import "HamburgerViewController.h"
 #import "HelpViewController.h"
+#include "AboutViewController.h"
 
 @interface HamburgerViewController ()
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *hamburgerViewWidth;
 @property (strong, nonatomic) HelpViewController *hvc;
+@property (strong, nonatomic) AboutViewController *avc;
 @end
 
 @implementation HamburgerViewController
@@ -19,18 +21,23 @@
 - (IBAction)pushHelpButton:(id)sender {
     NSLog(@"Help button pushed.");
     
-    [self.view.window.rootViewController presentViewController:self.hvc animated:NO completion:^{
+    [self.view.window.rootViewController presentViewController:self.avc animated:NO completion:^{
         NSLog(@"Done");
     }];
 }
 
 - (IBAction)pushAboutButton:(id)sender {
     NSLog(@"About button pushed.");
+    
+    [self.view.window.rootViewController presentViewController:self.avc animated:NO completion:^{
+        NSLog(@"Done");
+    }];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.hvc = [[HelpViewController alloc] init];
+    self.avc = [[AboutViewController alloc] init];
     
     // Do any additional setup after loading the view from its nib.
 }
