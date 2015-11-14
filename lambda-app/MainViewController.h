@@ -12,7 +12,8 @@
 
 
 @protocol HamburgerMenuDelegate <NSObject>
-- (void)toggleMenu;
+- (void)toggleMenu:(BOOL)animate;
+- (void)toggleMenuWithState:(BOOL)state animate:(BOOL)animate;
 @end
 
 @interface MainViewController : UIViewController <UITextFieldDelegate, HelperButtonDelegate>
@@ -20,4 +21,5 @@
 - (NSString*)evaluate:(NSString*)expr;
 - (void)handleButton:(ButtonType)buttonType;
 - (void)dismissKeyboard;
+@property (strong, nonatomic) id<HamburgerMenuDelegate> delegate;
 @end

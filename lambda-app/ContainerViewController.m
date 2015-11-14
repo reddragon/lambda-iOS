@@ -26,25 +26,38 @@
 -(id)init {
     self = [super init];
     if (self) {
-        self.hamburgerVC = [[HamburgerViewController alloc] init];
+        self.hamburgerVC = [[HamburgerViewController alloc] initWithDelegate:self];
         self.mainVC = [[MainViewController alloc] initWithDelegate:self];
     }
     return self;
 }
 
-- (void)toggleMenu {
-    //NSLog(@"Should toggle the menu now., %f", self.sideViewLeading.constant);
-    [self.mainVC dismissKeyboard];
-    if (self.sideViewWidth.constant == 150) {
-        self.sideViewWidth.constant = 0;
-    } else {
+- (void)toggleMenuWithState:(BOOL)state animate:(BOOL)animate {
+    if (state == YES) {
         self.sideViewWidth.constant = 150;
+    } else {
+        self.sideViewWidth.constant = 0;
     }
-    [UIView animateWithDuration:0.15 animations:^{
+    
+    if (animate) {
+        [UIView animateWithDuration:0.15 animations:^{
+            [self.view layoutIfNeeded];
+        } completion:^(BOOL finished) {
+            NSLog(@"Right Side View width: %f", self.rightView.frame.size.width);
+        }];
+    } else {
         [self.view layoutIfNeeded];
-    } completion:^(BOOL finished) {
-        NSLog(@"Right Side View width: %f", self.rightView.frame.size.width);
-    }];
+    }
+}
+
+-(void)toggleMenu:(BOOL)animate {
+    NSLog(@"toggleMenu called.");
+    [self.mainVC dismissKeyboard];
+    BOOL state = NO;
+    if (self.sideViewWidth.constant == 0) {
+        state = YES;
+    }
+    [self toggleMenuWithState:state animate:animate];
 }
 
 /*

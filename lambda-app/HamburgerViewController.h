@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+#import "MainViewController.h"
+
 @interface HamburgerViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UIView *hamburgerContainerView;
+- (id)initWithDelegate:(id<HamburgerMenuDelegate>)delegate;
 @end

@@ -25,7 +25,6 @@
 @property (strong, nonatomic) NSString *prevString;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *helperViewBottomConstraint;
 
-@property (strong, nonatomic) id<HamburgerMenuDelegate> delegate;
 - (IBAction)hamburgerButton:(id)sender;
 @end
 
@@ -34,7 +33,8 @@
 - (IBAction)hamburgerButton:(id)sender {
     NSLog(@"Button pressed");
     if (self.delegate != nil) {
-        [self.delegate toggleMenu];
+        [self dismissKeyboard];
+        [self.delegate toggleMenu:YES];
     }
 }
 
@@ -110,6 +110,7 @@
 }
 
 - (void)keyboardWillShow:(NSNotification*) notification {
+    [self.delegate toggleMenuWithState:NO animate:NO];
     NSLog(@"KeyboardWillShow");
     [self adjustViewForKeyboard:notification];
 }
@@ -167,12 +168,6 @@
     CGRect frame = self.view.bounds;
     frame.origin.x = 0;
     frame.size.width = frame.size.width - 100;
-    
-    /*
-    self.hamburgerVC.view.frame = frame;
-    self.hamburgerVC.view.bounds = frame;
-    [self.view addSubview:self.hamburgerVC.view];
-    */
 }
 
 - (NSString*)evaluate:(NSString*)expr {

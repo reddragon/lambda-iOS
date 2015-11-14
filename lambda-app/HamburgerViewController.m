@@ -9,19 +9,27 @@
 #import "HamburgerViewController.h"
 #import "HelpViewController.h"
 #include "AboutViewController.h"
+#include "MainViewController.h"
 
 @interface HamburgerViewController ()
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *hamburgerViewWidth;
 @property (strong, nonatomic) HelpViewController *hvc;
 @property (strong, nonatomic) AboutViewController *avc;
+@property (strong, nonatomic) id<HamburgerMenuDelegate> delegate;
 @end
 
 @implementation HamburgerViewController
 
+- (id)initWithDelegate:(id<HamburgerMenuDelegate>)delegate {
+    self.delegate = delegate;
+    return self;
+}
+
 - (IBAction)pushHelpButton:(id)sender {
     NSLog(@"Help button pushed.");
+    [self.delegate toggleMenu:NO];
     
-    [self.view.window.rootViewController presentViewController:self.avc animated:NO completion:^{
+    [self.view.window.rootViewController presentViewController:self.hvc animated:NO completion:^{
         NSLog(@"Done");
     }];
 }

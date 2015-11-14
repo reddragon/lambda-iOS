@@ -11,5 +11,5 @@
 #import "MainViewController.h"
 
 @interface ContainerViewController : UIViewController<HamburgerMenuDelegate>
-- (void)toggleMenu;
+- (void)toggleMenu:(BOOL)animate;
 @end

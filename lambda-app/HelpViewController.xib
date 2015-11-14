@@ -26,7 +26,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8NG-hr-FCL">
-                            <rect key="frame" x="553" y="20" width="37" height="30"/>
+                            <rect key="frame" x="10" y="20" width="37" height="30"/>
                             <state key="normal" title="Done"/>
                             <connections>
                                 <action selector="dismissHelp:" destination="-1" eventType="touchUpInside" id="QOx-w4-cgx"/>
@@ -35,12 +35,20 @@
                     </subviews>
                     <color key="backgroundColor" red="0.93738489869999997" green="0.93738489869999997" blue="0.93738489869999997" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
+                        <constraint firstItem="8NG-hr-FCL" firstAttribute="leading" secondItem="He7-Zc-0au" secondAttribute="leading" constant="10" id="AZz-Ud-dms"/>
                         <constraint firstItem="vCe-MV-UTe" firstAttribute="centerX" secondItem="He7-Zc-0au" secondAttribute="centerX" id="BqX-b5-QIT"/>
                         <constraint firstAttribute="height" constant="50" id="Bzu-vW-R6F"/>
                         <constraint firstItem="vCe-MV-UTe" firstAttribute="centerY" secondItem="He7-Zc-0au" secondAttribute="centerY" constant="10" id="ECn-yG-oyz"/>
+                        <constraint firstItem="8NG-hr-FCL" firstAttribute="leading" secondItem="vCe-MV-UTe" secondAttribute="trailing" constant="10" id="nTi-oQ-aad"/>
                         <constraint firstAttribute="trailing" secondItem="8NG-hr-FCL" secondAttribute="trailing" constant="10" id="wuo-6T-Iee"/>
                         <constraint firstItem="8NG-hr-FCL" firstAttribute="centerY" secondItem="He7-Zc-0au" secondAttribute="centerY" constant="10" id="yQw-N6-LXF"/>
                     </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="nTi-oQ-aad"/>
+                            <exclude reference="wuo-6T-Iee"/>
+                        </mask>
+                    </variation>
                 </view>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BWT-lV-8zo">
                     <rect key="frame" x="8" y="58" width="584" height="534"/>
