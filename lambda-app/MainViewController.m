@@ -51,39 +51,59 @@
     return self;
 }
 
+- (void)addSmartlyToTextField:(NSString*)s {
+    UITextRange *cursorPos = [self.inputField selectedTextRange];
+    if (cursorPos == nil) {
+        self.inputField.text = [NSString stringWithFormat:@"%@%@", self.inputField.text, s];
+    } else {
+        NSMutableString *newStr = [[NSMutableString alloc] initWithString:self.inputField.text];
+        NSInteger offset = [self.inputField
+                      offsetFromPosition:self.inputField.beginningOfDocument
+                      toPosition:cursorPos.start
+                      ];
+        [newStr insertString:s atIndex:offset];
+        self.inputField.text = newStr;
+        
+        NSInteger newOffset = offset + s.length;
+        UITextPosition *newPos = [self.inputField positionFromPosition:self.inputField.beginningOfDocument offset:newOffset];
+        UITextRange *newTxtRange = [self.inputField textRangeFromPosition:newPos toPosition:newPos];
+        [self.inputField setSelectedTextRange:newTxtRange];
+    }
+}
+
 - (void)handleButton:(ButtonType)buttonType {
     NSLog(@"Button hit with: %d", buttonType);
     switch (buttonType) {
         case kOpenBracket:
-            self.inputField.text = [NSString stringWithFormat:@"%@%s", self.inputField.text, "("];
+            [self addSmartlyToTextField:@"("];
             break;
         
         case kClosedBracket:
-            self.inputField.text = [NSString stringWithFormat:@"%@%s", self.inputField.text, ")"];
+            [self addSmartlyToTextField:@")"];
             break;
         
         case kAdd:
-            self.inputField.text = [NSString stringWithFormat:@"%@%s", self.inputField.text, "+ "];
+            [self addSmartlyToTextField:@"+ "];
             break;
         
         case kSubtract:
-            self.inputField.text = [NSString stringWithFormat:@"%@%s", self.inputField.text, "- "];
+            [self addSmartlyToTextField:@"- "];
             break;
         
         case kMultiply:
-            self.inputField.text = [NSString stringWithFormat:@"%@%s", self.inputField.text, "* "];
+            [self addSmartlyToTextField:@"* "];
             break;
             
         case kDivide:
-            self.inputField.text = [NSString stringWithFormat:@"%@%s", self.inputField.text, "/ "];
+            [self addSmartlyToTextField:@"/ "];
             break;
         
         case kDefvar:
-            self.inputField.text = [NSString stringWithFormat:@"%@%s", self.inputField.text, "defvar "];
+            [self addSmartlyToTextField:@"defvar "];
             break;
         
         case kDefun:
-            self.inputField.text = [NSString stringWithFormat:@"%@%s", self.inputField.text, "defun "];
+            [self addSmartlyToTextField:@"defun "];
             break;
         
         case kRepeat:
