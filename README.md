@@ -5,4 +5,6 @@ This is a WIP, and right now I only have a barebones version ready. Go through t
 
 
 ### Demo
+[A more up-to-date walkthrough here.](https://www.youtube.com/watch?v=GeEHN5VQn3Q)
+
 ![A Walkthrough](demo.gif)
