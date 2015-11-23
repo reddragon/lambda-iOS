@@ -26,7 +26,7 @@
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *helperViewBottomConstraint;
 @property (strong, nonatomic) NSMutableArray *commands;
 @property int goBackCounter;
-
+@property (strong, nonatomic) NSDictionary *attrDictionary;
 - (IBAction)hamburgerButton:(id)sender;
 @end
 
@@ -180,7 +180,10 @@
     
     //[self.inputField becomeFirstResponder];
     
-    self.contentScreen.text = @"> ";
+    UIFont *font = [UIFont fontWithName:@"Menlo" size:15.0];
+    self.attrDictionary = [NSDictionary dictionaryWithObject:font
+                                                                forKey:NSFontAttributeName];
+    [self.contentScreen setAttributedText:[[NSAttributedString alloc] initWithString:@"> " attributes:self.attrDictionary]];
     self.contentScreen.userInteractionEnabled = YES;
     self.contentScreen.scrollEnabled = YES;
     self.contentScreen.editable = NO;
@@ -195,19 +198,6 @@
     frame.origin.x = 0;
     frame.size.width = frame.size.width - 100;
 }
-
-- (NSString*)evaluate:(NSString*)expr {
-    NSString* result;
-    
-    GoLangEvalResult *evalResult = GoLangEval(expr, self.env);
-    if (evalResult.ErrStr.length > 0) {
-        result = evalResult.ErrStr;
-    } else {
-        result = evalResult.ValStr;
-    }
-    return result;
-}
-
 
 -(void)scrollTextViewToBottom:(UITextView *)textView {
     if(textView.text.length > 0 ) {
@@ -224,12 +214,35 @@
     NSLog(@"Ended editing");
 }
 
+- (NSAttributedString*)getAttrStr:(NSString*)expr {
+    NSMutableAttributedString* result = [NSMutableAttributedString alloc];
+    
+    GoLangEvalResult *evalResult = GoLangEval(expr, self.env);
+    if (evalResult.ErrStr.length > 0) {
+        result = [result initWithString:evalResult.ErrStr];
+        [result addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:207/255.0 green:23/255.0 blue:44/255.0 alpha:1.0] range:NSMakeRange(0, [result length])];
+    } else {
+        result = [result initWithString:evalResult.ValStr];
+        [result addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:20/255.0 green:128/255.0 blue:32/255.0 alpha:1.0] range:NSMakeRange(0, [result length])];
+    }
+    [result addAttributes:self.attrDictionary range:NSMakeRange(0, [result length])];
+    return result;
+}
+
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     NSLog(@"Input: %@", self.inputField.text);
     
-    NSString *result = [self evaluate:self.inputField.text];
-    self.contentScreen.text = [self.contentScreen.text stringByAppendingString:[NSString stringWithFormat:@"%@\n%@\n\n> ", self.inputField.text, result]];
+    NSAttributedString *result = [self getAttrStr:self.inputField.text];
+    NSMutableAttributedString *newStr = [[NSMutableAttributedString alloc] initWithAttributedString:self.contentScreen.attributedText];
+    [newStr appendAttributedString:[[NSAttributedString alloc] initWithString:self.inputField.text attributes:self.attrDictionary]];
+    [newStr appendAttributedString:[[NSAttributedString alloc] initWithString:@"\n" attributes:self.attrDictionary] ];
+    [newStr appendAttributedString:[[NSAttributedString alloc] initWithAttributedString:result]];
+    [newStr appendAttributedString:[[NSAttributedString alloc] initWithString:@"\n\n> " attributes:self.attrDictionary]];
+    
+    self.contentScreen.attributedText = newStr;
+    
+    //self.contentScreen.text = [self.contentScreen.text stringByAppendingString:[NSString stringWithFormat:@"%@\n%@\n\n> ", self.inputField.text, result]];
     self.prevString = self.inputField.text;
     if (self.commands.count == 0 || !([self.commands[self.commands.count - 1] isEqualToString:self.inputField.text])) {
         [self.commands addObject:self.inputField.text];

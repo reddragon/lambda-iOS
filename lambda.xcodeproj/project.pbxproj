@@ -198,7 +198,6 @@
 		C6C300EC1B92FD19007A7E3C /* lamda-app */ = {
 			isa = PBXGroup;
 			children = (
-				C6C0C88D1BF5CDBC00B3AE71 /* Syntax.txt */,
 				C6C300F11B92FD19007A7E3C /* AppDelegate.h */,
 				C6C300F21B92FD19007A7E3C /* AppDelegate.m */,
 				C6C300FA1B92FD19007A7E3C /* Images.xcassets */,
@@ -230,6 +229,7 @@
 		C6C300ED1B92FD19007A7E3C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C6C0C88D1BF5CDBC00B3AE71 /* Syntax.txt */,
 				C66E5C7B1BC1F2AE008BFE59 /* Icon-Images */,
 				C6C300EE1B92FD19007A7E3C /* Info.plist */,
 				C6C300EF1B92FD19007A7E3C /* main.m */,
@@ -561,6 +561,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cacheoblivious.lambda;
 				PRODUCT_NAME = lambda;
+				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = arm64;
 			};
@@ -585,6 +586,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cacheoblivious.lambda;
 				PRODUCT_NAME = lambda;
+				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = arm64;
 			};
