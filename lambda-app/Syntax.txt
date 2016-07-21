@@ -76,5 +76,20 @@ Otherwise, we evaluate the second expression, which is true. where we recurse by
 `> (defun fact (x) (cond ((= x 0) 1) (true (* x (fact (- x 1))))))`
 `<Method: fact>`
 
-`> (fact 10)`
-`3628800`
+`> (fact 30)`
+`265252859812191058636308480000000`
+
+
+### Functions as First-Class Citizens
+
+In lambda, you can pass functions as arguments to other functions. Here is a quick example:
+
+`> (defun add-one (x) (+ x 1))`
+`<Method: add-one>`
+
+`> (defun twice (f x) (f (f x)))`
+`<Method: twice>`
+
+`> (twice add-one 2)`
+`4`
+
